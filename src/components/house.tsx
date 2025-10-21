@@ -200,7 +200,7 @@ const HouseSection = () => {
         >
           {[
             {
-              img: Img1.src,
+              img: Img4.src,
               title: "De 15 à 50 personnes",
               description: "Un groupe = une maison",
             },
@@ -215,7 +215,7 @@ const HouseSection = () => {
               description: "Pour s’inspirer, se déconnecter, se dépasser",
             },
             {
-              img: Img4.src,
+              img: Img1.src,
               title: "Design & Singularité",
               description: "Une immersion immédiate",
             },
