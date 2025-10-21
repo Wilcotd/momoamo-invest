@@ -218,8 +218,8 @@ const HeroSection = ({
               aria-label="Main navigation"
               initial={{ opacity: 0, y: 50 }}
               animate={{
-                opacity: isScroll ? 1 : 0,
-                y: isScroll ? 0 : 50,
+                opacity: isScroll && scrollDirection === "down" ? 1 : 0,
+                y: isScroll && scrollDirection === "down" ? 0 : 50,
               }}
               exit={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}

@@ -166,7 +166,7 @@ const HouseSection = () => {
       <figure
         ref={swiperAnimRef}
         aria-label="Caractéristiques des maisons Momoamo"
-        className="w-[90%] md:w-full mt-12 px-4"
+        className="w-[90%] md:w-[95%] mt-12 px-4"
       >
         <Swiper
           modules={[Navigation, Autoplay]}
