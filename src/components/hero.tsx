@@ -11,10 +11,10 @@ const MotionImage = motion(Image);
 
 // Images
 import User3Image from "@/assets/images/hero/hero-attr-2.webp";
-import User2Image from "@/assets/images/hero/hero-attr-1.webp";
+import User2Image from "@/assets/images/hero/new-hero-or-2.jpg";
 import User4Image from "@/assets/images/hero/hero-attr-3.webp";
-import User1Image from "@/assets/images/hero/user1.jpg";
-import HouseImage from "@/assets/images/hero/house.jpg";
+import User1Image from "@/assets/images/hero/new-hero-or-1.webp";
+import HouseImage from "@/assets/images/hero/new-hero-or-3.webp";
 import Link from "next/link";
 import Letters from "./ui/letters";
 import { useState, useEffect } from "react";
@@ -115,8 +115,8 @@ const HeroSection = ({
                 Votre prochain offsite commence ici
               </h1>
               <p className="hero-title my-6 text-center text-lime-green font-general text-[18px] font-light tracking-normal opacity-0 w-[367px] max-w-full md:w-full">
-                Une collection de maisons d{"'"}exception destinée aux séjours
-                en équipe
+                Une collection de maisons d'exception créée pour vos séjours en
+                équipe
               </p>
               <div className="w-full flex justify-center">
                 <button
@@ -226,34 +226,34 @@ const HeroSection = ({
               className="fixed bottom-4 z-[9999] left-1/2 -translate-x-1/2 w-fit mx-auto p-2 lg:flex gap-2 bg-gray-green shadow-[0px_43px_90.1px_0px_rgba(41,34,34,0.2)] hidden"
             >
               <Link
-                href={"#courtigis"}
-                className="h-[58px] hover:!opacity-100 hover:bg-[#27391F1A] text-[18px] hover:border-0 uppercase flex items-center justify-center w-[149px] border border-[#273A1F33] font-nichrome font-bold text-dark-green transition-all duration-300 ease-in"
+                href="#NOS-MAISONS"
+                className="h-[58px] hover:!opacity-100 hover:bg-[#27391F1A] text-[18px] hover:border-[#ffffff1a] w-[130px] uppercase flex items-center justify-center border border-[#273A1F33] font-nichrome font-bold text-dark-green transition-all duration-300 ease-in"
               >
-                COURTIGIS
+                NOS MAISONS
               </Link>
               <Link
-                href="#experience"
-                className="h-[58px] hover:!opacity-100 hover:bg-[#27391F1A] text-[18px] hover:border-0 uppercase flex items-center justify-center w-[149px] border border-[#273A1F33] font-nichrome font-bold text-dark-green transition-all duration-300 ease-in"
+                href="#LEXPERIENE"
+                className="h-[58px] hover:!opacity-100 hover:bg-[#27391F1A] text-[18px] hover:border-[#ffffff1a] w-[130px] uppercase flex items-center justify-center border border-[#273A1F33] font-nichrome font-bold text-dark-green transition-all duration-300 ease-in"
               >
-                EXPÉRIENCE
+                L'EXPERIENE
               </Link>
               <Link
-                href={"#valeurs"}
-                className="h-[58px] hover:!opacity-100 hover:bg-[#27391F1A] text-[18px] hover:border-0 uppercase flex items-center justify-center w-[117px] border border-[#273A1F33] font-nichrome font-bold text-dark-green transition-all duration-300 ease-in"
+                href="#NOS-PRINCIPES"
+                className="h-[58px] hover:!opacity-100 hover:bg-[#27391F1A] text-[18px] hover:border-[#ffffff1a] w-[130px] uppercase flex items-center justify-center border border-[#273A1F33] font-nichrome font-bold text-dark-green transition-all duration-300 ease-in"
               >
-                VALEURS
+                NOS PRINCIPES
               </Link>
               <Link
                 href={"#savoir-faire"}
-                className="h-[58px] hover:!opacity-100 hover:bg-[#27391F1A] text-[18px] hover:border-0 uppercase flex items-center justify-center w-[111px] border border-[#273A1F33] font-nichrome font-bold text-dark-green transition-all duration-300 ease-in"
+                className="h-[58px] hover:!opacity-100 hover:bg-[#27391F1A] text-[18px] hover:border-[#ffffff1a] w-[130px] uppercase flex items-center justify-center border border-[#273A1F33] font-nichrome font-bold text-dark-green transition-all duration-300 ease-in"
               >
                 SAVOIR-FAIRE
               </Link>
               <Link
-                href={"#destinations"}
-                className="h-[58px] hover:!opacity-100 hover:bg-[#27391F1A] text-[18px] hover:border-0 uppercase flex items-center justify-center w-[119px] border border-[#273A1F33] font-nichrome font-bold text-dark-green transition-all duration-300 ease-in"
+                href={"#FAQ"}
+                className="h-[58px] hover:!opacity-100 hover:bg-[#27391F1A] text-[18px] hover:border-[#ffffff1a] w-[130px] uppercase flex items-center justify-center border border-[#273A1F33] font-nichrome font-bold text-dark-green transition-all duration-300 ease-in"
               >
-                DESTINATIONS
+                FAQ
               </Link>
               <button
                 type="button"

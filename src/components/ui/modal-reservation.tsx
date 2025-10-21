@@ -19,7 +19,9 @@ const ModalReservation = ({
   title: string;
   className?: string;
 }) => {
-  const [date, setDate] = useState<Date>();
+  const [arrivalDate, setArrivalDate] = useState<Date>();
+  const [departureDate, setDepartureDate] = useState<Date>();
+  const [isFlexibleDates, setIsFlexibleDates] = useState(false);
 
   // Reference to the close button for focus management
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -182,43 +184,122 @@ const ModalReservation = ({
                     name="participants"
                   />
                 </div>
-                <div>
-                  <label id="date-label" className="sr-only">
-                    Date de l'événement
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      id="flexible-dates"
+                      checked={isFlexibleDates}
+                      onChange={(e) => setIsFlexibleDates(e.target.checked)}
+                      className="sr-only" // Hide the actual checkbox
+                    />
+                    <div
+                      className={`h-5 w-5 border border-black flex items-center justify-center ${
+                        isFlexibleDates ? "bg-[#292222]" : "bg-white"
+                      }`}
+                    >
+                      {isFlexibleDates && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="white"
+                          className="w-3 h-3"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      )}
+                    </div>
+                    <label
+                      htmlFor="flexible-dates"
+                      className="absolute inset-0 cursor-pointer"
+                      aria-hidden="true"
+                    ></label>
+                  </div>
+                  <label
+                    htmlFor="flexible-dates"
+                    className="text-sm text-[#292222] cursor-pointer"
+                  >
+                    Je ne connais pas la durée du séjour ou les dates sont
+                    flexibles
                   </label>
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <Button
-                        variant="outline"
-                        data-empty={!date}
-                        className="data-[empty=true]:text-[#717171] text-base md:text-sm hover:bg-transparent md:data-[empty=true]:text-sm w-full bg-transparent shadow-none border border-black justify-start text-left font-normal transition-none"
-                        aria-labelledby="date-label"
-                      >
-                        {date ? (
-                          format(date, "dd/MM/yyyy")
-                        ) : (
-                          <span>Sélectionnez une date</span>
-                        )}
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent align="start" className="w-full p-0">
-                      <Calendar
-                        mode="single"
-                        selected={date}
-                        onSelect={setDate}
-                        disabled={{ before: new Date() }}
-                      />
-                    </PopoverContent>
-                  </Popover>
                 </div>
+
+                {!isFlexibleDates && (
+                  <div className="flex flex-col lg:flex-row items-center gap-5">
+                    <div className="w-full">
+                      <label htmlFor="arrival-date" className="sr-only">
+                        Date d'arrivée
+                      </label>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button
+                            id="arrival-date"
+                            variant="outline"
+                            data-empty={!arrivalDate}
+                            className="data-[empty=true]:text-[#717171] text-base md:text-sm hover:bg-transparent md:data-[empty=true]:text-sm w-full bg-transparent shadow-none border border-black justify-start text-left font-normal transition-none"
+                            aria-labelledby="arrival-date-label"
+                          >
+                            {arrivalDate ? (
+                              format(arrivalDate, "dd/MM/yyyy")
+                            ) : (
+                              <span>Date d'arrivée</span>
+                            )}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent align="start" className="w-full p-0">
+                          <Calendar
+                            mode="single"
+                            selected={arrivalDate}
+                            onSelect={setArrivalDate}
+                            disabled={{ before: new Date() }}
+                          />
+                        </PopoverContent>
+                      </Popover>
+                    </div>
+                    <div className="w-full">
+                      <label htmlFor="departure-date" className="sr-only">
+                        Date de départ
+                      </label>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button
+                            id="departure-date"
+                            variant="outline"
+                            data-empty={!departureDate}
+                            className="data-[empty=true]:text-[#717171] text-base md:text-sm hover:bg-transparent md:data-[empty=true]:text-sm w-full bg-transparent shadow-none border border-black justify-start text-left font-normal transition-none"
+                            aria-labelledby="departure-date-label"
+                          >
+                            {departureDate ? (
+                              format(departureDate, "dd/MM/yyyy")
+                            ) : (
+                              <span>Date de départ</span>
+                            )}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent align="start" className="w-full p-0">
+                          <Calendar
+                            mode="single"
+                            selected={departureDate}
+                            onSelect={setDepartureDate}
+                            disabled={{ before: arrivalDate || new Date() }}
+                          />
+                        </PopoverContent>
+                      </Popover>
+                    </div>
+                  </div>
+                )}
                 <div>
                   <label htmlFor="message" className="sr-only">
-                    Autre demande
+                    Compléter ma demande
                   </label>
                   <Textarea
                     id="message"
                     required
-                    placeholder="Autre demande"
+                    placeholder="Compléter ma demande"
                     rows={8}
                     maxLength={5000}
                     className="min-h-[190px]"

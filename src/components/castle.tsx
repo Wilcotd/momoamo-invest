@@ -25,39 +25,36 @@ import ModalReservation from "./ui/modal-reservation";
 const features = [
   {
     icon: Bed_Svg,
-    title: "21 chambres twinables avec salle de douche",
-  },
-  {
-    icon: ChairAlt_Svg,
-    title: "2 chambres de 5 lits",
-  },
-  {
-    icon: Forest_Svg,
-    title: "7 espaces de réunions / travail",
-  },
-  {
-    icon: Outdoor_Grill_Svg,
-    title: "Espaces de détente extérieur, intérieur, modulables...",
-  },
-  {
-    icon: Nightlife_Svg,
-    title: "Un grand espace modulable de réception",
-  },
-  {
-    icon: Forest_Svg,
-    title: "Terrain de 90 Hectares de forêt",
-  },
-  {
-    icon: Castle_Svg,
-    title: "4 bâtiments entièrement rénovés",
+    title: "20 chambres twinables avec salle de douche",
   },
   {
     icon: Pool_Svg,
     title: "Piscine chauffée",
   },
   {
+    icon: Forest_Svg,
+    title: "7 espaces pour se réunir",
+  },
+  {
+    icon: Nightlife_Svg,
+    title: "Un grand espace de réception",
+  },
+
+  {
+    icon: Forest_Svg,
+    title: "Terrain de 90 hectares de forêt",
+  },
+  {
+    icon: Castle_Svg,
+    title: "5 bâtisses entièrement rénovées",
+  },
+  {
+    icon: ChairAlt_Svg,
+    title: "Boulodrome",
+  },
+  {
     icon: Padel_Svg,
-    title: "2 terrains de padel + 1 terrain de tennis",
+    title: "1 terrain de padel + 1 terrain de tennis",
   },
   {
     icon: Sports_Golf_Svg,
@@ -78,7 +75,12 @@ const CastleSection = () => {
     hanSwiperRef.current?.handlePrev();
   };
 
-  const slides = [HouseImage.src, House1.src, House2.src, House3.src];
+  const slides = [
+    // HouseImage.src,
+    // House1.src,
+    // House2.src,
+    House3.src,
+  ];
 
   return (
     <>
@@ -88,8 +90,8 @@ const CastleSection = () => {
         title="Réserver mon séjour"
       />
       <section
-        id="courtigis"
-        aria-label="Domaine de Courtigis"
+        id="NOS-MAISONS"
+        aria-label="NOS MAISONS"
         className="xl:px-14 px-4 w-full max-w-[1360px] mx-auto relative overflow-hidden bg-gray-green md:py-[107px] py-[64px]"
       >
         <header
@@ -100,9 +102,10 @@ const CastleSection = () => {
             Domaine de Courtigis
           </h2>
           <p className="text-start text-black-green md:text-[36px] text-[26px] font-normal font-nichrome tracking-normal md:mt-[24px] mt-[32px] leading-[1.1]">
-            Le premier lieu MOMOAMO est un domaine situé à l{"'"}est de la forêt
-            d'Orléans à moins d'1h20 de Paris et 15 minutes de la gare de
-            Montargis.
+            Découvrez la toute première maison Momoamo: un domaine de 90
+            hectares en Sologne, à l'est de la forêt d'Orléans à moins d'1h10 de
+            Paris, pensé pour que chaque séjour d'équipe devienne une expérience
+            unique.
           </p>
         </header>
 
@@ -112,56 +115,61 @@ const CastleSection = () => {
         </figure>
 
         <div className="md:mt-[49px] mt-[32px] flex justify-between">
-          {slides.length > 1 && (
-            <nav
-              className="md:flex hidden justify-between max-w-28 w-28"
-              aria-label="Navigation du carrousel"
-            >
-              <button
-                className="w-8 h-8 rounded bg-transparent flex justify-center items-center p-[6.67px]"
-                aria-label="Image précédente"
-                onClick={handlePrev}
-                type="button"
-              >
-                <Image
-                  src={Arrow_Svg}
-                  alt=""
-                  width={18.67}
-                  height={18.67}
-                  className="w-[18.67px] h-[18.67px]"
-                  aria-hidden="true"
-                />
-              </button>
-              <button
-                className="w-8 h-8 rounded bg-transparent flex justify-center items-center p-[6.67px]"
-                aria-label="Image suivante"
-                onClick={handleNext}
-                type="button"
-              >
-                <Image
-                  src={Arrow_Svg}
-                  alt=""
-                  width={18.67}
-                  height={18.67}
-                  className="w-[18.67px] h-[18.67px] rotate-180"
-                  aria-hidden="true"
-                />
-              </button>
-            </nav>
-          )}
+          <nav
+            className="md:flex hidden justify-between max-w-28 w-28"
+            aria-label="Navigation du carrousel"
+          >
+            {slides.length > 1 && (
+              <>
+                <button
+                  className="w-8 h-8 rounded bg-transparent flex justify-center items-center p-[6.67px]"
+                  aria-label="Image précédente"
+                  onClick={handlePrev}
+                  type="button"
+                >
+                  <Image
+                    src={Arrow_Svg}
+                    alt=""
+                    width={18.67}
+                    height={18.67}
+                    className="w-[18.67px] h-[18.67px]"
+                    aria-hidden="true"
+                  />
+                </button>
+                <button
+                  className="w-8 h-8 rounded bg-transparent flex justify-center items-center p-[6.67px]"
+                  aria-label="Image suivante"
+                  onClick={handleNext}
+                  type="button"
+                >
+                  <Image
+                    src={Arrow_Svg}
+                    alt=""
+                    width={18.67}
+                    height={18.67}
+                    className="w-[18.67px] h-[18.67px] rotate-180"
+                    aria-hidden="true"
+                  />
+                </button>
+              </>
+            )}
+          </nav>
+
           <div ref={titleRef} className="md:w-[915px] w-full">
             <p className="text-start text-black-green text-[18px] font-normal font-general tracking-normal">
-              A quelques pas de Paris, ce lieu hors-norme vous attend pour vivre
-              une expérience où l'exception devient la règle. Au coeur de 90
-              hectares de forêt préservés, ce domaine de campagne accueil entre
-              20 et 50 privilégiés dans un confort haut de gamme, enveloppé dans
-              la nature ici, on se déconnecte (presque) complètement.
+              Tout près de Paris, ce lieu hors du commun vous attend pour vivre
+              une expérience où l'exception devient la règle. Niché au coeur de
+              la campagne, ce domaine permet de recevoir entre 15 et 50
+              personnes pour vivre une expérience à part, dans un cadre pensé
+              pour inspirer, partager et respirer.
             </p>
             <br />
             <p className="text-start text-black-green text-[18px] font-normal font-general tracking-normal">
-              Nous avons choisi ce lieu exceptionnel comme premier bien. Nous
-              avons réalisé près de 2 ans de travaux et souhaitons créer un
-              environnement propice aux échanges et aux moments en équipe.
+              Nous avons sélectionné ce lieu exceptionnel pour commencer notre
+              collection. Nous avons réalisé près de 2 ans de travaux pour créer
+              le meilleur environnement pour les échanges et les moments en
+              équipe. Tous les détails ont été pensé, et rien n'a été laissé au
+              hasard.
             </p>
           </div>
         </div>
@@ -169,7 +177,7 @@ const CastleSection = () => {
         {/* Kind of houses */}
         <div className="w-full rounded-[10px] md:mt-[64px] mt-[40px] py-8 flex flex-col items-center">
           <h3 className="w-full text-start text-black-green font-nichrome font-bold md:text-[64px] text-6xl mb-8 uppercase leading-none">
-            Les pièces, expériences & loisirs
+            LES PIECES, EXPERIENCES ET LOISIRS
           </h3>
           <ul
             ref={featuresRef}

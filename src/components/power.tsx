@@ -71,14 +71,18 @@ const PowerSection = () => {
           </header>
 
           <p className="text-power-secondary font-light font-general text-[18px] tracking-normal md:mt-[24px] mt-8 mb-[16px] leading-[1.3]">
-            Depuis 2017, Kymono aide les entreprises à donner vie à leur
-            culture.Avec des expertises complémentaires — vêtements et objets
-            personnalisés, aménagement de bureaux, conseil et événementiel. On
-            crée des expériences qui renforcent les liens et l’esprit d’équipe.
+            Depuis 2017, Kymono accompagne les entreprises sur tous les enjeux
+            liés à leur culture d'entreprise. Grâce à différents leviers:
+            personnalisation de vêtements et objets, aménagement de bureaux,
+            conseil en marque employeur, et organisation d'événements, Kymono
+            est ce partenaire central dans les moments de fort d'une entreprise.
+          </p>
+          <p className="text-power-secondary font-light font-general text-[18px] tracking-normal leading-[1.3] mb-[16px]">
+            Kymono souligne ce qui vous fédère autour d'une expérience
+            exigeante, sur-mesure et profondément humaine.
           </p>
           <p className="text-power-secondary font-light font-general text-[18px] tracking-normal leading-[1.3]">
-            Notre mission côté événements : imaginer des moments forts pour les
-            collaborateurs, et faire vibrer la culture d’entreprise.
+            We are Culture Designers.
           </p>
           <a
             href="https://kymono.co/"
@@ -112,8 +116,8 @@ const PowerSection = () => {
             <ul className="hidden md:flex flex-wrap justify-between items-center gap-y-8">
               {[
                 { title: "+10 000", description: "Clients" },
-                { title: "319", description: "Évènements" },
-                { title: "37%", description: "'Au vert' proche de paris" },
+                { title: "+ 1500", description: "Évènements" },
+                { title: "1", description: "Équipe passionnée" },
               ].map((item, index) => (
                 <li
                   className="flex flex-col flex-1 min-w-[180px] max-w-none"
@@ -170,7 +174,7 @@ const PowerSection = () => {
             aria-hidden="true"
             width={644}
             height={605}
-            className="md:h-[605px] w-full h-auto md:block hidden pointer-events-none"
+            className="h-full w-full object-cover md:block hidden pointer-events-none"
             loading="lazy"
           />
           {/* Gradient overlay */}

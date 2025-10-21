@@ -30,8 +30,8 @@ const OffsiteSection = () => {
   return (
     <section
       ref={sectionRef}
-      id="experience"
-      aria-label="Momoamo Offsite Experience"
+      id="LEXPERIENE"
+      aria-label="LEXPERIENE"
       className="w-full relative md:pt-[98px] pt-[64px] md:pb-[133px] pb-[64px]"
     >
       <div className="max-w-[1360px] xl:px-14 px-4 mx-auto">
@@ -50,9 +50,9 @@ const OffsiteSection = () => {
           className="w-full flex justify-end md:my-[72px] mb-[32px] mt-[24px]"
         >
           <p className="md:px-14 md:max-w-[915px] max-w-[358px] text-offsite-secondary font-light font-general text-[18px] tracking-normal text-start">
-            À mi-chemin entre maison de famille, bureau éphémère et hôtel haut
-            de gamme, chaque lieu Momoamo est un cadre unique pour travailler
-            autrement, se reconnecter et créer des souvenirs communs.
+            À mi-chemin entre un hôtel haut de gamme, un bureau éphémère une
+            maison de famille, chaque maison Momoamo est un cadre unique pour
+            travailler autrement, se reconnecter et créer des souvenirs communs.
           </p>
         </div>
       </div>
@@ -345,8 +345,8 @@ const OffsiteSection = () => {
             L'art de créer des moments inoubliables
           </h2>
           <p className="text-start text-offsite-secondary font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal mb-6 leading-[1.1]">
-            Chez Momoamo, on croit que les meilleures expériences sont celles
-            qui nous rapprochent.
+            Chez Momoamo, on est convaincus que les meilleures expériences sont
+            celles qui nous rapprochent.
           </p>
           <p className="text-offsite-secondary font-general font-light text-[18px] tracking-normal text-start leading-[1.3] ">
             C'est pourquoi nous créons des lieux où l'on se sent vraiment chez

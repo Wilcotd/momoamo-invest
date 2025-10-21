@@ -17,10 +17,10 @@ import HomeGear_Svg from "@/assets/images/house/home_and_garden.svg";
 import Business_Svg from "@/assets/images/house/business_center.svg";
 
 // Images
-import Img1 from "@/assets/images/house/de-20-a-50-personnes.webp";
-import Img2 from "@/assets/images/house/img2.jpg";
+import Img1 from "@/assets/images/house/house-new-3.webp";
+import Img2 from "@/assets/images/house/house-new-2.webp";
 import Img3 from "@/assets/images/house/img3.jpg";
-import Img4 from "@/assets/images/house/img4.jpg";
+import Img4 from "@/assets/images/house/house-new-1.webp";
 
 const features = [
   {

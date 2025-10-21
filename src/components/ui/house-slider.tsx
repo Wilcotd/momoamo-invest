@@ -13,23 +13,18 @@ import Img4 from "@/assets/images/house/img4.jpg";
 const slides = [
   {
     img: Img1.src,
-    title: "de 20 à 50 personnes",
-    description: "Un groupe = Une maison",
+    title: "De 15 à 50 personnes",
+    description: "Un groupe = une maison",
   },
   {
     img: Img2.src,
-    title: (
-      <>
-        À moins de 2h30
-        <br /> des grandes villes
-      </>
-    ),
-    description: "Paris, Lyon, Bordeaux...",
+    title: "A moins de 2h des grandes villes",
+    description: "Paris, Bordeaux, Lyon, Marseille...",
   },
   {
     img: Img3.src,
     title: "Ancrée dans la nature",
-    description: "Pour s’inspirer, se déconnecter, se dépasser",
+    description: "Pour s'inspirer, se déconnecter, se dépasser",
   },
   {
     img: Img4.src,

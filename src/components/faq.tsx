@@ -169,7 +169,10 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="max-w-[1360px] px-4 xl:px-14 w-full mx-auto relative overflow-hidden md:py-[100px] py-[64px]">
+    <section
+      id="FAQ"
+      className="max-w-[1360px] px-4 xl:px-14 w-full mx-auto relative overflow-hidden md:py-[100px] py-[64px]"
+    >
       <div className="w-full flex md:flex-row flex-col gap-4 justify-between items-start">
         {/* Header */}
         <header

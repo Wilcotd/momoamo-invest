@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useFooterAnimations } from "@/animations/scrollAnimations";
-import Img3 from "@/assets/images/offsite/join-the-community.webp";
+import Img3 from "@/assets/images/offsite/img3.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -102,35 +102,23 @@ const PrivacyPolicyModal = ({
     // Default Privacy Policy content
     return (
       <>
-        Les sites{" "}
-        <a
-          href="https://loupsgarous-experiences.co/"
-          target="_blank"
-          className="link-6"
-        >
-          https://loupsgarous-experiences.co/
-        </a>{" "}
-        sont édités par la société Kymono, <br />
-        Société par Actions Simplifiée au capital social de 2 980,63 euros,{" "}
-        <br />
-        immatriculée au registre du commerce et des sociétés de Paris sous le
-        numéro 830 268 207 et dont le siège social est situé au 8 rue Danielle
-        Casanova, 75002 Paris.
-        <br />‍
-        <br />
-        Directeur de la publication: Olivier Ramel
-        <br />
-        Hébergement: Kymono
-        <br />
-        Numéro SIRET: 830 268 207
-        <br />
-        Dernière modification: 29/04/2025
-        <br />
-        <br />
-        Les Loups Garous de Thiercelieux® est une marque enregistrée et utilisée
-        sous licence accordée par son titulaire ASMODEE GROUP. <br />
-        <br />
-        Tous droits réservés.
+        <p className="mb-[16px]">
+          Les sites{" "}
+          <a href="https://momoamo.com" target="_blank" className="link-6">
+            https://momoamo.com
+          </a>{" "}
+          sont édités par la société OAK Estate Operations, Société par Actions
+          Simplifiée au capital social de 1000 euros, immatriculée au registre
+          du commerce et des sociétés de Paris sous le numéro 928 249 044 et
+          dont le siège social est situé au 43 rue Godot de Mauroy, 75009 Paris.
+        </p>
+        <p className="mb-[16px]">
+          Directeur de la publication: Oak Estate Operations
+        </p>
+        <p className="mb-[16px]">Hébergement: Oak Estate Operations</p>
+        <p className="mb-[16px]">Numéro SIRET: 928 249 044</p>
+        <p className="mb-[16px]">Dernière modification: 18/10/2025</p>
+        <p className="mb-[16px]">Tous droits réservés.</p>
       </>
     );
     // }
@@ -245,8 +233,8 @@ const FooterSection = ({
             </h2>
             <p className="text-lime-green font-normal font-nichrome md:text-[36px] text-[23px] tracking-normal leading-[1.1] mb-[32px] md:mb-[24px]">
               Pour les lève-tôt abonnés à notre newsletter et les clients de
-              Kymono qui participent, on a une surprise spéciale pour vous.
-              Petit indice : ça ne se reproduira pas !
+              Kymono qui participent, nous avons une surprise très spéciale pour
+              vous. Petit indice : ça ne se reproduira pas !
             </p>
             <button className="!border-[2px] md:mt-6 mt-8 uppercase text-dark-green border-lime-green bg-lime-green font-bold font-nichrome text-[26px] md:w-[228px] w-full h-[60px] flex justify-center items-center gap-2 transition-all duration-300 ease-in hover:!bg-dark-green hover:!text-lime-green hover:border-lime-green">
               BE FIRST TO JOIN{" "}
@@ -337,7 +325,7 @@ const FooterSection = ({
             </div>
             <div className="w-full">
               <p className="text-lime-green font-general font-light text-[16px] leading-[1.3]">
-                © Momoamo - All rights reserved 2024
+                &copy; Momoamo - All rights reserved 2025
               </p>
             </div>
           </nav>
