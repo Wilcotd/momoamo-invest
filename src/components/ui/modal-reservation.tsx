@@ -132,12 +132,6 @@ const ModalReservation = ({
               >
                 <div className="flex flex-col lg:flex-row items-center gap-5">
                   <div className="w-full">
-                    <label htmlFor="nom" className="sr-only">
-                      Nom
-                    </label>
-                    <Input id="nom" required placeholder="Nom *" name="nom" />
-                  </div>
-                  <div className="w-full">
                     <label htmlFor="prenom" className="sr-only">
                       Prénom
                     </label>
@@ -147,6 +141,12 @@ const ModalReservation = ({
                       placeholder="Prénom *"
                       name="prenom"
                     />
+                  </div>
+                  <div className="w-full">
+                    <label htmlFor="nom" className="sr-only">
+                      Nom
+                    </label>
+                    <Input id="nom" required placeholder="Nom *" name="nom" />
                   </div>
                 </div>
                 <div>

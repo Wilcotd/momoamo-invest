@@ -112,15 +112,14 @@ const PowerSection = () => {
             className="w-full md:mt-[72px] mt-8"
             aria-label="Statistiques Kymono"
           >
-            {/* Desktop: 3 in a row, Mobile: 2 in first row, 1 centered in second row */}
-            <ul className="hidden md:flex flex-wrap justify-between items-center gap-y-8">
+            <ul className="text-center md:text-start flex flex-wrap justify-center md:justify-between items-center gap-[20px]">
               {[
                 { title: "+10 000", description: "Clients" },
                 { title: "+ 1500", description: "Évènements" },
                 { title: "1", description: "Équipe passionnée" },
               ].map((item, index) => (
                 <li
-                  className="flex flex-col flex-1 min-w-[180px] max-w-none"
+                  className="flex flex-col w-[calc(50%_-_10px)] md:w-[140px]"
                   key={index}
                 >
                   <h3 className="uppercase font-nichrome font-bold text-[40px] text-power-secondary">
@@ -131,34 +130,6 @@ const PowerSection = () => {
                   </p>
                 </li>
               ))}
-            </ul>
-            {/* Mobile: 2 in first row, 1 centered in second row */}
-            <ul className="flex flex-col md:hidden gap-y-8">
-              <div className="flex flex-row justify-between gap-x-4">
-                {[
-                  { title: "+10 000", description: "Clients" },
-                  { title: "319", description: "Évènements" },
-                ].map((item, index) => (
-                  <li className="flex flex-col flex-1 min-w-[48%]" key={index}>
-                    <h3 className="uppercase font-nichrome font-bold text-[44px] text-power-secondary md:text-start text-center">
-                      {item.title}
-                    </h3>
-                    <p className="font-general font-normal text-[18px] text-power-secondary md:text-start text-center">
-                      {item.description}
-                    </p>
-                  </li>
-                ))}
-              </div>
-              <li className="flex justify-center">
-                <article className="flex flex-col min-w-[180px] max-w-[80%] items-center">
-                  <h3 className="uppercase font-nichrome font-bold text-[44px] text-power-secondary">
-                    37%
-                  </h3>
-                  <p className="font-general font-normal text-[18px] text-power-secondary">
-                    "Au vert" proche de paris
-                  </p>
-                </article>
-              </li>
             </ul>
           </section>
         </article>

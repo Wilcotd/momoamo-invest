@@ -166,7 +166,7 @@ const HouseSection = () => {
       <figure
         ref={swiperAnimRef}
         aria-label="Caractéristiques des maisons Momoamo"
-        className="w-full mt-12 px-4"
+        className="w-[90%] md:w-full mt-12 px-4"
       >
         <Swiper
           modules={[Navigation, Autoplay]}
@@ -179,14 +179,10 @@ const HouseSection = () => {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          slidesPerView={3}
+          slidesPerView={1}
           spaceBetween={16}
           loop={true}
           breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 16,
-            },
             768: {
               slidesPerView: 2,
               spaceBetween: 16,
@@ -210,13 +206,8 @@ const HouseSection = () => {
             },
             {
               img: Img2.src,
-              title: (
-                <>
-                  À moins de 2h30
-                  <br /> des grandes villes
-                </>
-              ),
-              description: "Paris, Lyon, Bordeaux...",
+              title: "A moins de 2h des grandes villes",
+              description: "Paris, Bordeaux, Lyon, Marseille…",
             },
             {
               img: Img3.src,
@@ -225,8 +216,8 @@ const HouseSection = () => {
             },
             {
               img: Img4.src,
-              title: "Design & singularité",
-              description: "Une groupe = Une maison",
+              title: "Design & Singularité",
+              description: "Une immersion immédiate",
             },
           ].map((item, idx) => (
             <SwiperSlide key={idx} aria-roledescription="slide">

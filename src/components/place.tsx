@@ -177,7 +177,7 @@ const PlaceSection = () => {
                     date: "2026",
                   },
                   {
-                    title: "Deauville",
+                    title: "Bourgogne",
                     description: "coming soon",
                     date: "2027",
                   },

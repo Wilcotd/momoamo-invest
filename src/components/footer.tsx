@@ -81,47 +81,147 @@ const PrivacyPolicyModal = ({
 
   // Dynamic content based on title
   const getModalContent = () => {
-    // if (title === "Cookie Policy") {
-    //   return (
-    //     <>
-    //       <p>
-    //         Les sites <strong>MOMOAMO</strong> utilisent des cookies pour
-    //         améliorer votre expérience de navigation et vous offrir un service
-    //         personnalisé.
-    //       </p>
-    //       <h3 className="font-nichrome font-bold text-[24px] mt-6 mb-3">
-    //         Qu'est-ce qu'un cookie ?
-    //       </h3>
-    //       <p>
-    //         Un cookie est un petit fichier texte déposé sur votre terminal
-    //         (ordinateur, tablette, mobile) lors de votre visite sur notre site.
-    //       </p>
-    //     </>
-    //   );
-    // } else {
-    // Default Privacy Policy content
-    return (
-      <>
-        <p className="mb-[16px]">
-          Les sites{" "}
-          <a href="https://momoamo.com" target="_blank" className="link-6">
-            https://momoamo.com
-          </a>{" "}
-          sont édités par la société OAK Estate Operations, Société par Actions
-          Simplifiée au capital social de 1000 euros, immatriculée au registre
-          du commerce et des sociétés de Paris sous le numéro 928 249 044 et
-          dont le siège social est situé au 43 rue Godot de Mauroy, 75009 Paris.
-        </p>
-        <p className="mb-[16px]">
-          Directeur de la publication: Oak Estate Operations
-        </p>
-        <p className="mb-[16px]">Hébergement: Oak Estate Operations</p>
-        <p className="mb-[16px]">Numéro SIRET: 928 249 044</p>
-        <p className="mb-[16px]">Dernière modification: 18/10/2025</p>
-        <p className="mb-[16px]">Tous droits réservés.</p>
-      </>
-    );
-    // }
+    if (title === "Cookie Policy") {
+      return (
+        <>
+          <p className="mb-[16px]">
+            Cette politique explique comment Momoamo utilise les cookies et
+            technologies similaires sur le site{" "}
+            <a
+              href="https://momoamo.com"
+              target="_blank"
+              className="link-6 text-underline"
+            >
+              momoamo.com
+            </a>
+            .
+          </p>
+
+          <hr className="border-[#292222] my-6" />
+
+          <h3 className="font-nichrome font-bold text-[24px] mb-3">
+            Qu'est-ce qu'un cookie ?
+          </h3>
+          <p className="mb-[16px]">
+            Un cookie est un petit fichier enregistré sur votre appareil
+            (ordinateur, mobile, tablette) lors de la consultation du site. Il
+            permet de reconnaître votre navigateur et de mémoriser certaines
+            informations utiles afin d'assurer le bon fonctionnement du site ou
+            d'améliorer votre expérience de navigation.
+          </p>
+
+          <hr className="border-[#292222] my-6" />
+
+          <h3 className="font-nichrome font-bold text-[24px] mb-3">
+            Quels types de cookies utilisons-nous ?
+          </h3>
+          <p className="mb-[16px]">
+            Nous utilisons uniquement des cookies essentiels, qui permettent :
+          </p>
+          <ul className="list-disc pl-8 mb-[16px]">
+            <li>d'assurer la sécurité et le bon fonctionnement du site,</li>
+            <li>
+              de faciliter la navigation (session, préférences, affichage).
+            </li>
+          </ul>
+          <p className="mb-[16px]">
+            Pour le moment, aucun cookie publicitaire ou de mesure d'audience
+            n'est déposé.
+          </p>
+          <p className="mb-[16px]">
+            Si des outils de statistiques (ex : Google Analytics) sont ajoutés à
+            l'avenir, cette politique sera mise à jour et votre consentement
+            sera demandé avant toute installation.
+          </p>
+
+          <hr className="border-[#292222] my-6" />
+
+          <h3 className="font-nichrome font-bold text-[24px] mb-3">
+            Pourquoi utilisons-nous ces cookies ?
+          </h3>
+          <p className="mb-[16px]">Ces cookies sont nécessaires pour :</p>
+          <ul className="list-disc pl-8 mb-[16px]">
+            <li>permettre l'accès au site et à ses fonctionnalités,</li>
+            <li>garantir sa sécurité,</li>
+            <li>assurer une navigation fluide.</li>
+          </ul>
+
+          <hr className="border-[#292222] my-6" />
+
+          <h3 className="font-nichrome font-bold text-[24px] mb-3">
+            Consentement
+          </h3>
+          <p className="mb-[16px]">
+            Les cookies essentiels ne nécessitent pas de consentement (directive
+            ePrivacy). Aucun cookie non essentiel n'est installé sans votre
+            accord.
+          </p>
+
+          <hr className="border-[#292222] my-6" />
+
+          <h3 className="font-nichrome font-bold text-[24px] mb-3">
+            Durée de conservation
+          </h3>
+          <p className="mb-[16px]">
+            Les cookies essentiels sont conservés uniquement pendant la durée
+            nécessaire à leur finalité (souvent le temps de la session).
+          </p>
+
+          <hr className="border-[#292222] my-6" />
+
+          <h3 className="font-nichrome font-bold text-[24px] mb-3">
+            Gestion des cookies
+          </h3>
+          <p className="mb-[16px]">
+            Vous pouvez désactiver les cookies à tout moment depuis les
+            paramètres de votre navigateur. Attention : cela peut empêcher le
+            bon fonctionnement du site.
+          </p>
+
+          <hr className="border-[#292222] my-6" />
+
+          <h3 className="font-nichrome font-bold text-[24px] mb-3">Contact</h3>
+          <p className="mb-[16px]">
+            Pour toute question concernant cette politique, vous pouvez nous
+            contacter à :{" "}
+            <a
+              href="mailto:contact@momoamo.co"
+              className="underline hover:opacity-70"
+            >
+              contact@momoamo.co
+            </a>
+          </p>
+        </>
+      );
+    } else {
+      // Default Privacy Policy content
+      return (
+        <>
+          <p className="mb-[16px]">
+            Les sites{" "}
+            <a
+              href="https://momoamo.com"
+              target="_blank"
+              className="link-6 text-underline"
+            >
+              https://momoamo.com
+            </a>{" "}
+            sont édités par la société OAK Estate Operations, Société par
+            Actions Simplifiée au capital social de 1000 euros, immatriculée au
+            registre du commerce et des sociétés de Paris sous le numéro 928 249
+            044 et dont le siège social est situé au 43 rue Godot de Mauroy,
+            75009 Paris.
+          </p>
+          <p className="mb-[16px]">
+            Directeur de la publication: Oak Estate Operations
+          </p>
+          <p className="mb-[16px]">Hébergement: Oak Estate Operations</p>
+          <p className="mb-[16px]">Numéro SIRET: 928 249 044</p>
+          <p className="mb-[16px]">Dernière modification: 18/10/2025</p>
+          <p className="mb-[16px]">Tous droits réservés.</p>
+        </>
+      );
+    }
   };
 
   return (
@@ -138,7 +238,7 @@ const PrivacyPolicyModal = ({
         >
           <motion.div
             ref={modalRef}
-            className="bg-gray-green w-screen h-[100dvh] overflow-y-auto relative flex flex-col md:gap-5 justify-center p-6 lg:px-40"
+            className="pt-[120px] bg-gray-green w-screen h-[100dvh] overflow-y-auto relative flex flex-col md:gap-5 p-6 lg:px-40"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
@@ -147,7 +247,7 @@ const PrivacyPolicyModal = ({
             <button
               ref={closeButtonRef}
               onClick={onClose}
-              className="absolute right-[22px] md:right-10 top-10 text-[#292222] text-3xl focus:outline-none"
+              className="fixed right-[22px] md:right-10 top-10 text-[#292222] text-3xl focus:outline-none"
               aria-label="Fermer"
               type="button"
             >

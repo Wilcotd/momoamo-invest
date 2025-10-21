@@ -235,7 +235,7 @@ const HeroSection = ({
                 href="#LEXPERIENE"
                 className="h-[58px] hover:!opacity-100 hover:bg-[#27391F1A] text-[18px] hover:border-[#ffffff1a] w-[130px] uppercase flex items-center justify-center border border-[#273A1F33] font-nichrome font-bold text-dark-green transition-all duration-300 ease-in"
               >
-                L'EXPERIENE
+                L'EXPERIENCE
               </Link>
               <Link
                 href="#NOS-PRINCIPES"
