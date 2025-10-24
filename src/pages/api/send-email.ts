@@ -37,11 +37,11 @@ export async function sendEmail({
     from: "Momoamo<no-reply@momoamo.com>",
     to: "contact@momoamo.com",
     subject: `Nouvelle demande : ${entreprise}`,
-    text: `Prénom: ${prenom}\nNom: ${nom}\nEmail: ${email}\nTéléphone: ${phone}\nEntreprise: ${entreprise}\nParticipants: ${participants}\nMessage: \n${message}\nDate d'arrivée: ${
-      arrivalDate ?? ""
-    }\nDate de départ: ${
+    text: `Prénom : ${prenom}\nNom : ${nom}\nEmail : ${email}\nTéléphone : ${phone}\nNb. participants : ${participants}\nDates flexibles : ${
+      isFlexibleDates ? "Oui" : "Non"
+    }\nDate d'arrivée : ${arrivalDate ?? ""}\nDate de départ : ${
       departureDate ?? ""
-    }\nDates flexibles: ${isFlexibleDates}`,
+    }\nMessage : \n${message}`,
   };
 
   const customerMail = {
