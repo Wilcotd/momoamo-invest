@@ -1,4 +1,5 @@
 import { WebClient } from "@slack/web-api";
+import { fi } from "date-fns/locale";
 
 export async function sendSlackMessage({
   prenom,
@@ -74,10 +75,16 @@ export async function sendSlackMessage({
     },
     {
       type: "section",
-      text: {
-        type: "mrkdwn",
-        text: `*Date :* ${arrivalDate ?? ""} - ${departureDate ?? ""}`,
-      },
+      fields: [
+        {
+          type: "mrkdwn",
+          text: `*Date d'arrivée :* ${arrivalDate ?? ""}`,
+        },
+        {
+          type: "mrkdwn",
+          text: `*Date de départ :* ${departureDate ?? ""}`,
+        },
+      ],
     },
     {
       type: "section",
