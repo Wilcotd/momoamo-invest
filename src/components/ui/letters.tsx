@@ -4,7 +4,15 @@ import { useWindowSize } from "@/hooks/useWindowSize";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const Letters = ({ isScroll, stop, direction }: { isScroll: boolean; stop: boolean, direction: string }) => {
+const Letters = ({
+  isScroll,
+  stop,
+  direction,
+}: {
+  isScroll: boolean;
+  stop: boolean;
+  direction: string;
+}) => {
   const router = useRouter();
   const { width } = useWindowSize();
   const isMobile = width < 768;
@@ -35,16 +43,30 @@ const Letters = ({ isScroll, stop, direction }: { isScroll: boolean; stop: boole
               "word fixed max-w-[1360px] left-1/2 -translate-x-1/2 px-4 xl:px-14 w-full justify-center flex z-30",
             ].join(" ")}
             animate={
-            isScroll && direction === "down" ? {
-              scale: smallScale,
-              top: !isScroll ? (isMobile ? 70 : 100) : isMobile ? 10 : -56,
-              y: "-100%",
-            } :
-            {
-              scale: isScroll ? smallScale : bigScale,
-              top: !isScroll ? (isMobile ? 70 : 100) : isMobile ? 10 : -56,
-            }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+              isScroll && direction === "down"
+                ? {
+                    scale: smallScale,
+                    top: !isScroll
+                      ? isMobile
+                        ? 70
+                        : 100
+                      : isMobile
+                      ? 10
+                      : -56,
+                    y: "-100%",
+                  }
+                : {
+                    scale: isScroll ? smallScale : bigScale,
+                    top: !isScroll
+                      ? isMobile
+                        ? 70
+                        : 100
+                      : isMobile
+                      ? 10
+                      : -56,
+                  }
+            }
+            transition={{ duration: 0.4, ease: "easeInOut" }}
           >
             {/* M */}
             <motion.span
@@ -66,7 +88,7 @@ const Letters = ({ isScroll, stop, direction }: { isScroll: boolean; stop: boole
               }}
               transition={{
                 delay: 1,
-                duration: 0.6,
+                duration: 0.4,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
               className="cluster"

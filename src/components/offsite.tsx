@@ -73,7 +73,7 @@ const OffsiteSection = () => {
             aria-hidden="true"
             width={485}
             height={728}
-            className="absolute z-[1] left-0 md:left-[16px] bottom-0 md:w-[485px] md:h-[728px] w-[188px] h-[282px] object-cover pointer-events-none"
+            className="absolute z-[2] left-0 md:left-[16px] bottom-0 md:w-[485px] md:h-[728px] w-[188px] h-[282px] object-cover pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -82,7 +82,7 @@ const OffsiteSection = () => {
             aria-hidden="true"
             width={430}
             height={535}
-            className="absolute top-0 md:left-[485px] left-[166.26px] md:w-[430px] md:h-[538px] w-[165px] h-[205px] object-cover pointer-events-none"
+            className="z-1 absolute top-0 md:left-[485px] left-[166.26px] md:w-[430px] md:h-[538px] w-[165px] h-[205px] object-cover pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -111,7 +111,7 @@ const OffsiteSection = () => {
             aria-hidden="true"
             width={485}
             height={600}
-            className="absolute z-[1] left-[700px] top-0 md:w-[485px] md:h-[550px] w-[188px] h-[282px] object-cover pointer-events-none"
+            className="absolute z-[6] left-[700px] top-0 md:w-[485px] md:h-[550px] w-[188px] h-[282px] object-cover pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -120,7 +120,7 @@ const OffsiteSection = () => {
             aria-hidden="true"
             width={485}
             height={700}
-            className="absolute z-[4] bottom-4 md:left-[300px] left-[166px] md:w-[485px] md:h-[700px] w-[165px] h-[205px] object-cover pointer-events-none"
+            className="absolute z-[5] bottom-4 md:left-[300px] left-[166px] md:w-[485px] md:h-[700px] w-[165px] h-[205px] object-cover pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -149,7 +149,7 @@ const OffsiteSection = () => {
             aria-hidden="true"
             width={485}
             height={728}
-            className="absolute z-[1] left-0 md:left-[16px] bottom-0 md:w-[485px] md:h-[728px] w-[188px] h-[282px] object-cover"
+            className="absolute z-[2] left-0 md:left-[16px] bottom-0 md:w-[485px] md:h-[728px] w-[188px] h-[282px] object-cover pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -158,7 +158,7 @@ const OffsiteSection = () => {
             aria-hidden="true"
             width={430}
             height={535}
-            className="absolute top-0 md:left-[485px] left-[166.26px] md:w-[430px] md:h-[538px] w-[165px] h-[205px] object-cover"
+            className="z-1 absolute top-0 md:left-[485px] left-[166.26px] md:w-[430px] md:h-[538px] w-[165px] h-[205px] object-cover pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -167,7 +167,7 @@ const OffsiteSection = () => {
             aria-hidden="true"
             width={357}
             height={465}
-            className="absolute bottom-0 md:right-[369px] -right-[47.26px] md:w-[357px] md:h-[465px] w-[138px] h-[179px] object-cover"
+            className="absolute bottom-0 md:right-[369px] -right-[47.26px] md:w-[357px] md:h-[465px] w-[138px] h-[179px] object-cover pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -176,18 +176,18 @@ const OffsiteSection = () => {
             aria-hidden="true"
             width={431}
             height={535}
-            className="absolute top-0 md:-right-[118px] -right-[260px] md:w-[431px] md:h-[535px] w-[165px] h-[205px] object-cover"
+            className="absolute top-0 md:-right-[118px] -right-[260px] md:w-[431px] md:h-[535px] w-[165px] h-[205px] object-cover pointer-events-none"
             loading="lazy"
           />
         </div>
-        <div className="moving-logo-inner--desktop slide md:h-[826px] h-[320px] relative md:min-w-[1440px] min-w-[408px]">
+        <div className="moving-logo-inner--desktop slide md:h-[826px] h-[320px] relative md:min-w-[1440px] min-w-[408px] mr-[404px]">
           <Image
             src={Img5.src}
             alt=""
             aria-hidden="true"
             width={485}
             height={600}
-            className="absolute z-[1] left-[700px] top-0 md:w-[485px] md:h-[550px] w-[188px] h-[282px] object-cover"
+            className="absolute z-[6] left-[700px] top-0 md:w-[485px] md:h-[550px] w-[188px] h-[282px] object-cover pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -196,7 +196,7 @@ const OffsiteSection = () => {
             aria-hidden="true"
             width={485}
             height={700}
-            className="absolute z-[4] bottom-4 md:left-[300px] left-[166px] md:w-[485px] md:h-[700px] w-[165px] h-[205px] object-cover"
+            className="absolute z-[5] bottom-4 md:left-[300px] left-[166px] md:w-[485px] md:h-[700px] w-[165px] h-[205px] object-cover pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -205,7 +205,7 @@ const OffsiteSection = () => {
             aria-hidden="true"
             width={357}
             height={465}
-            className="absolute z-[4] bottom-0 md:right-[150px] -right-[67px] md:w-[357px] md:h-[465px] w-[137px] h-[178px] object-cover"
+            className="absolute z-[4] bottom-0 md:right-[150px] -right-[67px] md:w-[357px] md:h-[465px] w-[137px] h-[178px] object-cover pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -214,7 +214,7 @@ const OffsiteSection = () => {
             aria-hidden="true"
             width={431}
             height={535}
-            className="absolute top-0 md:-right-[400px] -right-[260px] md:w-[431px] md:h-[535px] w-[165px] h-[205px] object-cover"
+            className="absolute top-0 md:-right-[400px] -right-[260px] md:w-[431px] md:h-[535px] w-[165px] h-[205px] object-cover pointer-events-none"
             loading="lazy"
           />
         </div>
