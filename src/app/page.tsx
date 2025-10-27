@@ -18,7 +18,7 @@ const Home = () => {
     const handleScroll = () => {
       if (window.scrollY > 0 && !isScroll) {
         setIsScroll(true);
-      } else if (window.scrollY === 0 && isScroll) {
+      } else if (window.scrollY <= 0 && isScroll) {
         setIsScroll(false);
       }
     };

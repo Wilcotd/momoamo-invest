@@ -16,7 +16,7 @@ const Letters = ({
   const router = useRouter();
   const { width } = useWindowSize();
   const isMobile = width < 768;
-  const smallScale = isMobile ? 0.5 : 0.2;
+  const smallScale = isMobile ? 0.35 : 0.2;
   const bigScale = 1;
   const [size, setSize] = useState<{ width: number; height: number } | null>(
     null
@@ -44,15 +44,31 @@ const Letters = ({
               top: !isScroll ? (isMobile ? 70 : 100) : isMobile ? 10 : -56,
               y: isScroll && direction === "down" ? "-100%" : "0%",
             }}
-            transition={{
-              duration: 0.8,
-              ease: "easeInOut",
-              y: { delay: 0.5, duration: 0.4, ease: "easeInOut" },
-            }}
+            transition={
+              !isScroll && direction === "up"
+                ? {
+                    delay: isMobile ? 0 : 0.3,
+                    duration: isMobile ? 0.2 : 0.3,
+                    ease: "easeIn",
+                    y: {
+                      duration: isMobile ? 0.2 : 0.3,
+                      delay: 0,
+                    },
+                  }
+                : {
+                    duration: isMobile ? 0.2 : 0.3,
+                    ease: "easeOut",
+                    y: {
+                      delay: isScroll ? (isMobile ? 0.1 : 0.3) : 0,
+                      duration: isMobile ? 0.2 : 0.3,
+                      ease: "easeOut",
+                    },
+                  }
+            }
           >
             {/* M */}
             <motion.span
-              transition={{ delay: 1, duration: 0.4, ease: "easeOut" }}
+              transition={{ delay: 0.4, duration: 0.4, ease: "easeOut" }}
               className="glyph m-lead"
               aria-label="M"
             >
@@ -69,8 +85,8 @@ const Letters = ({
                 width: "calc(var(--sumCluster) * 100% / var(--sum))",
               }}
               transition={{
-                delay: 1,
-                duration: 0.6,
+                delay: 0.8,
+                duration: 0.4,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
               className="cluster"
@@ -118,7 +134,7 @@ const Letters = ({
               </span>
             </motion.span>
             <motion.span
-              transition={{ delay: 1, duration: 0.4, ease: "easeOut" }}
+              transition={{ delay: 0.4, duration: 0.4, ease: "easeOut" }}
               className="glyph o-tail"
               aria-label="O"
             >

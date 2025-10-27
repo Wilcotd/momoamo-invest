@@ -53,7 +53,7 @@ export const useHeroAnimations = () => {
           opacity: 1,
           duration: 1,
           ease: "power3.out",
-          delay: 1.5,
+          delay: 0.8,
         }
       );
 
@@ -68,7 +68,7 @@ export const useHeroAnimations = () => {
             duration: 1,
             ease: "power3.out",
             stagger: 0.2,
-            delay: 2,
+            delay: 0.8,
           }
         );
       }
@@ -76,13 +76,13 @@ export const useHeroAnimations = () => {
       // Button animation - scale in with bounce
       gsap.fromTo(
         buttonRef.current,
-        { scale: 0, opacity: 0 },
+        { y: 20, opacity: 0 },
         {
-          scale: 1,
+          y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: "back.out(1.7)",
-          delay: 1.8,
+          duration: 0.4,
+          ease: "power3.out",
+          delay: 1.2,
         }
       );
 
