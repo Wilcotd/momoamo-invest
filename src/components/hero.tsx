@@ -78,7 +78,9 @@ const HeroSection = ({
               instagram
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/momoamo/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative z-10 uppercase leading-none tracking-wider font-nichrome text-lime-green text-[18px] font-bold no-underline cursor-pointer"
             >
               linkedin

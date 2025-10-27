@@ -45,7 +45,7 @@ const Letters = ({
               y: isScroll && direction === "down" ? "-100%" : "0%",
             }}
             transition={{
-              duration: 0.4,
+              duration: 0.8,
               ease: "easeInOut",
               y: { delay: 0.5, duration: 0.4, ease: "easeInOut" },
             }}
@@ -70,7 +70,7 @@ const Letters = ({
               }}
               transition={{
                 delay: 1,
-                duration: 0.4,
+                duration: 0.6,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
               className="cluster"
