@@ -222,7 +222,7 @@ const HouseSection = () => {
             {
               img: Img3.src,
               title: "Ancrée dans la nature",
-              description: "Pour s'inspirer, se déconnecter, se dépasser",
+              description: "Pour s’inspirer, se déconnecter, se dépasser",
             },
             {
               img: Img1.src,

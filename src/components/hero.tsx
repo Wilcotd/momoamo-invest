@@ -36,6 +36,7 @@ const HeroSection = ({
     null
   );
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [outOfHero, setOutOfHero] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,6 +54,31 @@ const HeroSection = ({
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+
+  // Detect when top of screen intersects with bottom of hero section
+  useEffect(() => {
+    if (!heroRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Check if the bottom of the hero section is above the viewport
+        if (entry.boundingClientRect.bottom <= 0) {
+          setOutOfHero(true);
+        } else {
+          setOutOfHero(false);
+        }
+      },
+      { threshold: [0], rootMargin: "0px" }
+    );
+
+    observer.observe(heroRef.current);
+
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -78,15 +104,19 @@ const HeroSection = ({
               instagram
             </a>
             <a
-              href="https://www.linkedin.com/company/momoamo/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
               className="relative z-10 uppercase leading-none tracking-wider font-nichrome text-lime-green text-[18px] font-bold no-underline cursor-pointer"
             >
               linkedin
             </a>
           </nav>
           <div className="justify-end items-center gap-6 hidden md:flex">
+            <button
+              type="button"
+              className="uppercase leading-none tracking-wider font-nichrome font-bold text-lime-green text-2xl w-[159px] h-[44px] border-[1px] border-lime-green transition-all duration-300 ease-in"
+            >
+              connexion
+            </button>
             <button
               type="button"
               onClick={() => setIsModal(true)}
@@ -100,6 +130,7 @@ const HeroSection = ({
           isScroll={isScroll}
           stop={stop}
           direction={scrollDirection || "down"}
+          outOfHero={outOfHero}
         />
         <main className="w-full h-full md:mt-10 mt-[18px]">
           <article className="w-full h-[28%]">

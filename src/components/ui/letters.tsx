@@ -8,10 +8,12 @@ const Letters = ({
   isScroll,
   stop,
   direction,
+  outOfHero = false,
 }: {
   isScroll: boolean;
   stop: boolean;
   direction: string;
+  outOfHero?: boolean;
 }) => {
   const router = useRouter();
   const { width } = useWindowSize();
@@ -42,7 +44,7 @@ const Letters = ({
             animate={{
               scale: isScroll ? smallScale : bigScale,
               top: !isScroll ? (isMobile ? 70 : 100) : isMobile ? 10 : -56,
-              y: isScroll && direction === "down" ? "-100%" : "0%",
+              y: isScroll && direction === "down" && outOfHero ? "-100%" : "0%",
             }}
             transition={
               !isScroll && direction === "up"
