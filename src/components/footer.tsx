@@ -337,9 +337,9 @@ const FooterSection = ({
               Join the <br /> community
             </h2>
             <p className="text-lime-green font-normal font-nichrome md:text-[36px] text-[23px] tracking-normal leading-[1.1] mb-[32px] md:mb-[24px]">
-              Pour les lève-tôt abonnés à notre newsletter et les clients de
-              Kymono qui participent, nous avons une surprise très spéciale pour
-              vous. Petit indice : ça ne se reproduira pas !
+              Pour les curieux, ceux qui partagent nos valeurs,
+              qui aiment les surprises et veulent suivre
+              l&apos;aventure : join the community !
             </p>
             <a
               href="https://substack.com/@momoamo"
