@@ -1,5 +1,4 @@
 import { WebClient } from "@slack/web-api";
-import { fi } from "date-fns/locale";
 
 export async function sendSlackMessage({
   prenom,
