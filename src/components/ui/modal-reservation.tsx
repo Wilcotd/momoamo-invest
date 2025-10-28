@@ -413,7 +413,6 @@ const ModalReservation = ({
                   </label>
                   <Textarea
                     id="message"
-                    required
                     placeholder="Compléter ma demande"
                     rows={8}
                     maxLength={5000}
