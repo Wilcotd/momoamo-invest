@@ -112,11 +112,11 @@ const ModalReservation = ({
       entreprise,
       participants,
       message,
-      arrivalDate: arrivalDate
+      arrivalDate: !isFlexibleDates && arrivalDate
         ? Intl.DateTimeFormat("fr-FR").format(arrivalDate)
         : null,
       departureDate: departureDate
-        ? Intl.DateTimeFormat("fr-FR").format(departureDate)
+        ? !isFlexibleDates && Intl.DateTimeFormat("fr-FR").format(departureDate)
         : null,
       isFlexibleDates,
     };

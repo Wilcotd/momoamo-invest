@@ -34,8 +34,6 @@ export async function sendEmail({
     },
   });
 
-  console.log("Preparing to send emails to:", email);
-
   const customerMail = {
     from: "Momoamo<contact@momoamo.com>",
     to: email,

@@ -6,15 +6,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("Received request:", req.method, req.body);
-
   if (req.method !== "POST") return res.status(405).end();
 
   const data = req.body;
 
   // Send email
   try {
-    console.log("Sending email with data:", data);
     await sendEmail(data);
   } catch (err) {
     console.error("Failed to send email:", err);
