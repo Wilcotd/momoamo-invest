@@ -34,15 +34,31 @@ const ModalReservation = ({
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Handle keyboard events
+  // Check if device is desktop (not mobile)
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Detect if device is desktop on component mount
+  useEffect(() => {
+    // Simple detection based on user agent
+    const checkIfDesktop = () => {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isMobile =
+        /iphone|ipad|ipod|android|blackberry|windows phone/g.test(userAgent);
+      setIsDesktop(!isMobile);
+    };
+
+    checkIfDesktop();
+  }, []);
+
+  // Handle keyboard events - only for desktop
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
       }
 
-      // Trap focus within modal
-      if (e.key === "Tab" && modalRef.current) {
+      // Trap focus within modal - only on desktop
+      if (e.key === "Tab" && modalRef.current && isDesktop) {
         const focusableElements = modalRef.current.querySelectorAll(
           'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
         );
@@ -64,7 +80,7 @@ const ModalReservation = ({
         }
       }
     },
-    [onClose]
+    [onClose, isDesktop]
   );
 
   // Handle body scroll lock when modal is open
@@ -73,15 +89,17 @@ const ModalReservation = ({
       // Prevent scrolling when modal is open
       document.body.style.overflow = "hidden";
 
-      // Focus the close button when modal opens
-      setTimeout(() => {
-        if (closeButtonRef.current) {
-          closeButtonRef.current.focus();
-        }
-      }, 100);
+      // Focus the close button when modal opens - only on desktop
+      if (isDesktop) {
+        setTimeout(() => {
+          if (closeButtonRef.current) {
+            closeButtonRef.current.focus();
+          }
+        }, 100);
 
-      // Add event listener for Escape key and focus trap
-      document.addEventListener("keydown", handleKeyDown);
+      // Add event listener for Escape key and focus trap - only on desktop
+        document.addEventListener("keydown", handleKeyDown);
+      }
     } else {
       // Allow scrolling when modal is closed
       document.body.style.overflow = "";
@@ -90,9 +108,11 @@ const ModalReservation = ({
     // Cleanup function to ensure scroll is restored and event listeners removed
     return () => {
       document.body.style.overflow = "";
-      document.removeEventListener("keydown", handleKeyDown);
+      if (isDesktop) {
+        document.removeEventListener("keydown", handleKeyDown);
+      }
     };
-  }, [isOpen, handleKeyDown]);
+  }, [isOpen, handleKeyDown, isDesktop]);
 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -155,7 +175,7 @@ const ModalReservation = ({
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed z-[99999] inset-0 bg-black/50 flex justify-center items-end"
+          className="fixed z-[99999] inset-0 bg-black/50 flex items-end"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -166,7 +186,7 @@ const ModalReservation = ({
           <motion.div
             ref={modalRef}
             className={cn(
-              "bg-gray-green w-screen h-[100dvh] overflow-y-auto relative flex flex-col gap-10 justify-center px-6 lg:px-40",
+              "bg-gray-green w-screen h-[100dvh] overflow-y-auto relative flex flex-col gap-10 px-6 lg:px-40",
               className
             )}
             initial={{ y: "100%" }}
