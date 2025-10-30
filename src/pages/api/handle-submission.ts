@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { sendSlackMessage } from "./send-slack";
 import { sendEmail } from "./send-email";
 import { isDevEnv, isProdEnv } from "@/utils/env";
+import { writeGoogleSheet } from "./write-gsheet";
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,6 +13,14 @@ export default async function handler(
   const data = req.body;
 
   console.log("env", isProdEnv, isDevEnv);
+
+  // Fill google sheet
+  try {
+    await writeGoogleSheet(data);
+  } catch (err) {
+    console.error("Failed to write to Google Sheets:", err);
+    return res.status(500).json({ error: "Failed to write to Google Sheets" });
+  }
 
   // Send email
   try {

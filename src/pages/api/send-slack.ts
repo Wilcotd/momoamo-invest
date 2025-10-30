@@ -1,9 +1,10 @@
 import { isProdEnv } from "@/utils/env";
 import { WebClient } from "@slack/web-api";
+import { ReservationFormData } from "./types";
 
 const getSlackChannel = () => (isProdEnv ? "momoamo-requests" : "test-bot");
 
-export async function sendSlackMessage({
+export const sendSlackMessage = async ({
   prenom,
   nom,
   email,
@@ -14,18 +15,7 @@ export async function sendSlackMessage({
   arrivalDate,
   departureDate,
   isFlexibleDates,
-}: {
-  prenom: string;
-  nom: string;
-  email: string;
-  phone: string;
-  entreprise: string;
-  participants: string;
-  message: string;
-  arrivalDate?: string;
-  departureDate?: string;
-  isFlexibleDates?: boolean;
-}) {
+}: ReservationFormData) => {
   const slack = new WebClient(process.env.SLACK_WEB_CLIENT_TOKEN);
   const channel = getSlackChannel();
 
@@ -110,4 +100,4 @@ export async function sendSlackMessage({
     console.error("Error:", JSON.stringify(error));
     throw error;
   }
-}
+};

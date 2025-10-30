@@ -1,5 +1,6 @@
 import { isProdEnv } from "@/utils/env";
 import nodemailer from "nodemailer";
+import { ReservationFormData } from "./types";
 
 const testEmail = "tech-tests@momoamo.com";
 
@@ -10,7 +11,7 @@ const getContactEmail = () => (isProdEnv ? "contact@momoamo.com" : testEmail);
 const makeSubject = (subject: string) =>
   isProdEnv ? subject : `[TEST] ${subject}`;
 
-export async function sendEmail({
+export const sendEmail = async ({
   prenom,
   nom,
   email,
@@ -21,18 +22,7 @@ export async function sendEmail({
   arrivalDate,
   departureDate,
   isFlexibleDates,
-}: {
-  prenom: string;
-  nom: string;
-  email: string;
-  phone: string;
-  entreprise: string;
-  participants: string;
-  message: string;
-  arrivalDate?: string;
-  departureDate?: string;
-  isFlexibleDates?: boolean;
-}) {
+}: ReservationFormData) => {
   const transporter = nodemailer.createTransport({
     host: "smtp-relay.gmail.com",
     port: 587,
@@ -72,4 +62,4 @@ export async function sendEmail({
   await transporter.sendMail(customerMail);
 
   await transporter.sendMail(notificationMail);
-}
+};
