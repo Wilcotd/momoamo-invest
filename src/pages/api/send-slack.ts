@@ -1,4 +1,7 @@
+import { isProdEnv } from "@/utils/env";
 import { WebClient } from "@slack/web-api";
+
+const getSlackChannel = () => (isProdEnv ? "momoamo-requests" : "test-bot");
 
 export async function sendSlackMessage({
   prenom,
@@ -23,10 +26,8 @@ export async function sendSlackMessage({
   departureDate?: string;
   isFlexibleDates?: boolean;
 }) {
-  const slack = new WebClient(
-    "xoxb-6849747696358-9760541938085-k0eTSQfUmgWcEll5ySDX2AOR"
-  );
-  const channel = "momoamo-requests";
+  const slack = new WebClient(process.env.SLACK_WEB_CLIENT_TOKEN);
+  const channel = getSlackChannel();
 
   const blocks = [
     {

@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { sendSlackMessage } from "./send-slack";
 import { sendEmail } from "./send-email";
+import { isDevEnv, isProdEnv } from "@/utils/env";
 
 export default async function handler(
   req: NextApiRequest,
@@ -9,6 +10,8 @@ export default async function handler(
   if (req.method !== "POST") return res.status(405).end();
 
   const data = req.body;
+
+  console.log("env", isProdEnv, isDevEnv);
 
   // Send email
   try {

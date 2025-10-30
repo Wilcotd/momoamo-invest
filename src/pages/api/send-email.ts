@@ -1,4 +1,14 @@
+import { isProdEnv } from "@/utils/env";
 import nodemailer from "nodemailer";
+
+const testEmail = "tech-tests@momoamo.com";
+
+const getCustomerEmail = (email: string) => (isProdEnv ? email : testEmail);
+
+const getContactEmail = () => (isProdEnv ? "contact@momoamo.com" : testEmail);
+
+const makeSubject = (subject: string) =>
+  isProdEnv ? subject : `[TEST] ${subject}`;
 
 export async function sendEmail({
   prenom,
@@ -30,14 +40,14 @@ export async function sendEmail({
     requireTLS: true,
     auth: {
       user: "no-reply@momoamo.com",
-      pass: "sjcv tkxw jrws nnoz",
+      pass: process.env.EMAIL_APP_PASSWORD,
     },
   });
 
   const customerMail = {
     from: "Momoamo<contact@momoamo.com>",
-    to: email,
-    subject: "Votre expérience Momoamo commence ici",
+    to: getCustomerEmail(email),
+    subject: makeSubject("Votre expérience Momoamo commence ici"),
     html: `
       <p>Hello ${prenom},</p>
       <p>Merci beaucoup pour votre demande de réservation !</p>
@@ -50,8 +60,8 @@ export async function sendEmail({
 
   const notificationMail = {
     from: "Momoamo<no-reply@momoamo.com>",
-    to: "contact@momoamo.com",
-    subject: `Nouvelle demande : ${entreprise}`,
+    to: getContactEmail(),
+    subject: makeSubject(`Nouvelle demande : ${entreprise}`),
     text: `Prénom : ${prenom}\nNom : ${nom}\nEmail : ${email}\nTéléphone : ${phone}\nNb. participants : ${participants}\nDates flexibles : ${
       isFlexibleDates ? "Oui" : "Non"
     }\nDate d'arrivée : ${arrivalDate ?? ""}\nDate de départ : ${
