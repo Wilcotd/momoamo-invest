@@ -12,13 +12,11 @@ export default async function handler(
 
   const data = req.body;
 
-  console.log("env", isProdEnv, isDevEnv);
-
   // Fill google sheet
   try {
     await writeGoogleSheet(data);
   } catch (err) {
-    console.error("Failed to write to Google Sheets:", err);
+    console.error("Failed to write to Google Sheets:", err, data);
     return res.status(500).json({ error: "Failed to write to Google Sheets" });
   }
 
@@ -26,7 +24,7 @@ export default async function handler(
   try {
     await sendEmail(data);
   } catch (err) {
-    console.error("Failed to send email:", err);
+    console.error("Failed to send email:", err, data);
     return res.status(500).json({ error: "Failed to send email" });
   }
 
@@ -34,7 +32,7 @@ export default async function handler(
   try {
     await sendSlackMessage(data);
   } catch (err) {
-    console.error("Failed to send Slack message:", err);
+    console.error("Failed to send Slack message:", err, data);
     return res.status(500).json({ error: "Failed to send Slack message" });
   }
 
