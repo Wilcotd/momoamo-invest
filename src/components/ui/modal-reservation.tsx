@@ -149,7 +149,7 @@ const ModalReservation = ({
       });
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error || "Failed to send email or Slack message");
+        throw new Error(data.error);
       }
       setSuccessMessage("Votre demande a été envoyée avec succès !");
       // Clear form fields
