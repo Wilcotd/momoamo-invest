@@ -71,14 +71,14 @@ export const metadata: Metadata = {
     email: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://momo.wilcot.co"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://momoamo.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "MOMOAMO | Votre prochain offsite commence ici",
     description: "Découvrez la toute première maison Momoamo: un domaine de 90 hectares en Sologne, à l'est de la forêt d'Orléans à moins d'1h10 de Paris, pensé pour que chaque séjour d'équipe devienne une expérience unique.",
-    url: process.env.NEXT_PUBLIC_BASE_URL || "https://momo.wilcot.co",
+    url: process.env.NEXT_PUBLIC_BASE_URL || "https://momoamo.com",
     siteName: "MOMOAMO",
     locale: "fr_FR",
     type: "website",
