@@ -75,7 +75,7 @@ const PowerSection = () => {
             liés à leur culture d'entreprise. Grâce à différents leviers:
             personnalisation de vêtements et objets, aménagement de bureaux,
             conseil en marque employeur, et organisation d'événements, Kymono
-            est ce partenaire central dans les moments de fort d'une entreprise.
+            est ce partenaire central dans les moments d'une entreprise.
           </p>
           <p className="text-power-secondary font-light font-general text-[18px] tracking-normal leading-[1.3] mb-[16px]">
             Kymono souligne ce qui vous fédère autour d'une expérience
