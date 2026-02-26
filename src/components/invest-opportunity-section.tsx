@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import { useInvestWaitlistModal } from "@/components/modals/InvestWaitlistModalProvider";
-
+import Button_Arrow_Svg from "@/assets/images/svgs/arrow_forward.svg";
 import Bed_Svg from "@/assets/images/svgs/bed.svg";
 
 const opportunityItems = [
@@ -52,7 +52,7 @@ const InvestOpportunitySection = () => {
       className="w-full bg-gray-green"
     >
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[120px] py-[64px]">
-        <header className="max-w-[900px]">
+        <header className="max-w-[780px]">
           <p className="text-black-green font-nichrome font-bold uppercase text-[28px] tracking-wider">
             L’OPPORTUNITÉ D’INVESTISSEMENT
           </p>
@@ -61,9 +61,8 @@ const InvestOpportunitySection = () => {
             <br />
             AVEC MOMOAMO ?
           </h2>
-          <p className="text-black-green font-general font-light md:text-[24px] text-[20px] leading-[1.3] mt-6">
-            Participez à un projet unique par son approche intégré, qui mêle
-            performance et sécurité
+          <p className="mt-6 text-black-green font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal leading-[1.1]">
+            Participez à un projet unique par son approche intégré, qui mêle performance et sécurité
           </p>
         </header>
 
@@ -74,22 +73,22 @@ const InvestOpportunitySection = () => {
                 src={Bed_Svg}
                 alt=""
                 aria-hidden="true"
-                width={28}
-                height={28}
-                className="w-[28px] h-[28px] pointer-events-none"
+                width={40}
+                height={40}
+                className="w-[40px] h-[40px] pointer-events-none"
                 loading="lazy"
               />
-              <p className="mt-4 text-black-green font-general font-light text-[16px]">
+              <p className="my-[24px] text-black-green font-normal font-nichrome md:text-[20px] text-[24px] tracking-normal leading-[1.1]">
                 {item.label}
               </p>
-              <h3 className="mt-3 text-black-green font-nichrome font-bold uppercase text-[28px] leading-tight">
+              <h3 className="text-black-green font-nichrome font-bold uppercase text-[28px] leading-tight">
                 {item.headline}
               </h3>
-              <p className="mt-3 text-black-green font-general font-light text-[16px] leading-[1.4]">
+              <p className="mt-[8px] text-black-green font-general font-light text-[20px] leading-[1.4]">
                 {item.description}
               </p>
               {index === 0 && item.footnote ? (
-                <p className="mt-3 text-black-green font-general italic text-[14px] leading-[1.4]">
+                <p className="mt-[8px] text-black-green font-general font-light text-[20px] leading-[1.4] italic">
                   {item.footnote}
                 </p>
               ) : null}
@@ -98,29 +97,24 @@ const InvestOpportunitySection = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-black-green font-general font-light md:text-[22px] text-[20px] leading-[1.3]">
-            Inscrivez vous pour le webinar de lancement de notre seconde
-            opération
+          <p className="text-black-green font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal leading-[1.1]">
+            Inscrivez vous pour le webinar de lancement de notre seconde opération
           </p>
           <button
             type="button"
             onClick={openModal}
-            className="mt-6 inline-flex items-center justify-center gap-3 uppercase text-dark-green border-lime-green bg-lime-green font-bold font-nichrome md:text-[22px] text-[20px] md:px-10 px-8 md:h-[64px] h-[56px] transition-all duration-300 ease-in hover:!bg-dark-green hover:!text-lime-green hover:border-lime-green"
+            className="group mt-6 !border-[2px] uppercase hover:!bg-transparent hover:border hover:border-dark-green hover:text-lime-green text-dark-green bg-lime-green font-bold font-nichrome md:text-[28px] text-[28px] md:h-[64px] h-[60px] flex justify-center items-center gap-[10px] md:py-5 py-4 px-6 transition-all duration-300 ease-in border-lime-green mx-auto"
           >
             JE M’INSCRIS
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <Image
+              src={Button_Arrow_Svg}
+              alt=""
+              width={20}
+              height={20}
+              loading="lazy"
+              className="w-[20px] h-[20px] group-hover:invert transition-all duration-300 ease-in pointer-events-none invert"
               aria-hidden="true"
-            >
-              <path
-                d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z"
-                fill="currentColor"
-              />
-            </svg>
+            />
           </button>
         </div>
       </div>

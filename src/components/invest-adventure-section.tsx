@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import { useInvestWaitlistModal } from "@/components/modals/InvestWaitlistModalProvider";
+import Button_Arrow_Svg from "@/assets/images/svgs/arrow_forward.svg";
 
 import AdventureImage from "@/assets/images/invest-page/invest-adventure-img-1.webp";
 import AdventureImage2 from "@/assets/images/invest-page/invest-adventure-img-2.webp";
@@ -59,22 +60,18 @@ const InvestAdventureSection = () => {
           <button
             type="button"
             onClick={openModal}
-            className="mt-6 inline-flex items-center justify-center gap-3 uppercase text-dark-green border-lime-green bg-lime-green font-bold font-nichrome md:text-[20px] text-[18px] md:px-8 px-6 md:h-[56px] h-[80px] transition-all duration-300 ease-in hover:!bg-dark-green hover:!text-lime-green hover:border-lime-green"
+            className="group mt-6 !border-[2px] uppercase hover:!bg-transparent hover:border hover:border-dark-green hover:text-lime-green text-dark-green bg-lime-green font-bold font-nichrome md:text-[28px] text-[20px] md:h-[64px] h-[70px] flex justify-center items-center gap-[10px] md:py-5 py-4 px-6 transition-all duration-300 ease-in border-lime-green leading-[1.1] text-start"
           >
             REJOIGNEZ-NOUS ET INVESTISSEZ À NOS CÔTÉS
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <Image
+              src={Button_Arrow_Svg}
+              alt=""
+              width={20}
+              height={20}
+              loading="lazy"
+              className="w-[20px] h-[20px] group-hover:invert transition-all duration-300 ease-in pointer-events-none invert"
               aria-hidden="true"
-            >
-              <path
-                d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z"
-                fill="currentColor"
-              />
-            </svg>
+            />
           </button>
         </div>
       </div>

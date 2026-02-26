@@ -24,13 +24,13 @@ const InvestProjectSection = () => {
             aria-hidden="true"
             width={1360}
             height={560}
-            className="w-full h-[420px] md:h-[560px] object-cover"
+            className="w-full h-[680px] object-cover"
             loading="lazy"
           />
 
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-6 w-[88%] md:w-[46%] md:left-[6%] md:top-[18%] md:translate-x-0 md:bottom-auto backdrop-blur-md bg-black/40 border border-white/15 shadow-lg">
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-6 w-[88%] md:w-[480px] max-w-full md:left-[50px] md:bottom-[50px] md:translate-x-0 md:top-auto backdrop-blur-md bg-black/40 border border-white/15 shadow-lg">
             <div className="p-6 md:p-8">
-              <h3 className="text-lime-green font-nichrome font-bold uppercase md:text-[28px] text-[24px] leading-none">
+              <h3 className="text-[#EEE5D7] font-nichrome font-bold uppercase text-[28px] leading-tight">
                 DOMAINE DE COURTIGIS
               </h3>
 
@@ -40,10 +40,10 @@ const InvestProjectSection = () => {
                     key={item.label}
                     className="grid grid-cols-[1fr_auto] gap-6 py-4 border-b border-white/15"
                   >
-                    <p className="text-lime-green font-nichrome font-bold uppercase text-[16px] leading-tight">
+                    <p className="text-[#EEE5D7] font-normal font-general text-[16px] tracking-normal leading-[1.2]">
                       {item.label}
                     </p>
-                    <p className="text-right text-lime-green/90 font-general font-light text-[16px] leading-tight">
+                    <p className="text-[#EEE5D7] font-semibold font-general text-[16px] tracking-normal leading-[1.2]">
                       {item.value}
                     </p>
                   </div>
@@ -51,10 +51,10 @@ const InvestProjectSection = () => {
               </div>
 
               <div className="grid grid-cols-[1fr_auto] gap-6 pt-4">
-                <p className="text-lime-green font-nichrome font-bold uppercase text-[16px] leading-tight">
+                <p className="text-[#EEE5D7] font-semibold font-general text-[16px] tracking-normal leading-[1.2]">
                   TRI cible opération
                 </p>
-                <span className="inline-flex items-center justify-center rounded-full bg-lime-green text-dark-green font-nichrome font-bold uppercase text-[16px] px-4 py-1">
+                <span className="inline-flex items-center justify-center bg-lime-green text-dark-green font-nichrome font-bold uppercase text-[16px] px-4 py-1">
                   12%
                 </span>
               </div>

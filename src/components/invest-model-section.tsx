@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import { useInvestWaitlistModal } from "@/components/modals/InvestWaitlistModalProvider";
+import Button_Arrow_Svg from "@/assets/images/svgs/arrow_forward.svg";
 
 import ModelIcon1 from "@/assets/images/invest-page/invest-model-icon-1.svg";
 import ModelIcon2 from "@/assets/images/invest-page/invest-model-icon-2.svg";
@@ -97,28 +98,24 @@ const InvestModelSection = () => {
             <button
               type="button"
               onClick={openModal}
-              className="mt-8 inline-flex items-center justify-between gap-4 uppercase text-dark-green bg-lime-green font-bold font-nichrome md:text-[20px] text-[18px] px-6 h-[80px] md:h-[56px] border border-lime-green transition-all duration-300 ease-in hover:!bg-dark-green hover:!text-lime-green"
+              className="group mt-6 !border-[2px] uppercase hover:!bg-transparen text-dark-green bg-lime-green font-bold font-nichrome md:text-[28px] text-[20px] md:h-[64px] h-[70px] flex justify-center items-center gap-[10px] md:py-5 py-4 px-6 transition-all duration-300 ease-in border-lime-green leading-[1.1] text-start"
             >
               DÉCOUVRIR NOTRE SECONDE OPÉRATION
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <Image
+                src={Button_Arrow_Svg}
+                alt=""
+                width={20}
+                height={20}
+                loading="lazy"
+                className="w-[20px] h-[20px] group-hover:invert transition-all duration-300 ease-in pointer-events-none invert"
                 aria-hidden="true"
-              >
-                <path
-                  d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z"
-                  fill="currentColor"
-                />
-              </svg>
+              />
             </button>
           </div>
 
           <div className="w-full relative hidden md:block">
             <div className="absolute left-[14px] top-2 bottom-2 w-px bg-lime-green/30" />
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-[72px]">
               {modelItems.map((item, index) => (
                 <div
                   key={item.title}
@@ -136,17 +133,17 @@ const InvestModelSection = () => {
                     aria-hidden="true"
                     width={40}
                     height={40}
-                    className="w-[40px] h-[40px] pointer-events-none mb-[32px]"
+                    className="w-[40px] h-[40px] pointer-events-none"
                     loading="lazy"
                   />
-                  <h3 className="text-lime-green font-nichrome font-bold uppercase text-[28px] leading-none">
+                  <h3 className="text-lime-green font-nichrome font-bold uppercase text-[28px] leading-none my-[32px]">
                     {item.title}
                   </h3>
                   <ul className="mt-4 flex flex-col gap-3">
                     {item.bullets.map((bullet) => (
                       <li
                         key={bullet}
-                        className="text-lime-green font-general font-light text-[16px] leading-[1.4]"
+                        className="text-lime-green font-general font-light text-[20px] leading-[1.4]"
                       >
                         {bullet}
                       </li>
@@ -174,17 +171,17 @@ const InvestModelSection = () => {
                       aria-hidden="true"
                       width={40}
                       height={40}
-                      className="w-[40px] h-[40px] pointer-events-none mb-[32px]"
+                      className="w-[40px] h-[40px] pointer-events-none"
                       loading="lazy"
                     />
-                    <h3 className="text-lime-green font-nichrome font-bold uppercase text-[28px] leading-none">
+                    <h3 className="text-lime-green font-nichrome font-bold uppercase text-[28px] leading-none my-[32px]">
                       {item.title}
                     </h3>
-                    <ul className="mt-4 flex flex-col gap-3">
+                    <ul className="flex flex-col gap-3">
                       {item.bullets.map((bullet) => (
                         <li
                           key={bullet}
-                          className="text-lime-green font-general font-light text-[16px] leading-[1.4]"
+                          className="text-lime-green font-general font-light text-[20px] leading-[1.4]"
                         >
                           {bullet}
                         </li>
