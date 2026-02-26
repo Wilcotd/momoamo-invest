@@ -9,23 +9,25 @@ import {
   useScrollSlideUp,
   useScrollStaggerIn,
 } from "@/animations/scrollAnimations";
-import PerformanceImage from "@/assets/images/house/house-1.jpg";
+import PerformanceImage1 from "@/assets/images/invest-page/invest-performance-1.webp";
+import PerformanceImage2 from "@/assets/images/invest-page/invest-performance-2.webp";
+import PerformanceImage3 from "@/assets/images/invest-page/invest-performance-3.webp";
 
 const performanceCards = [
   {
-    image: PerformanceImage,
+    image: PerformanceImage1,
     title: "EVÈNEMENT VIP /SOIRÉES DE PRESTIGE BI-ANNUELLES",
     description:
       "2 fois par an, nous réunissons l'ensemble des investisseurs pour une soirée de gala. L'occasion de célébrer les nouveaux projet, de rencontrer l’équipe et de tisser des liens forts avec vos pairs dans un cadre informel et exclusif.",
   },
   {
-    image: PerformanceImage,
+    image: PerformanceImage2,
     title: "20% DE RÉDUCTION À VIE",
     description:
       "En tant qu'investisseur, vous profitez de 20% de réduction, à vie, sur l'ensemble de nos maisons, pour vos vacances, mariages et stages en tous genre.",
   },
   {
-    image: PerformanceImage,
+    image: PerformanceImage3,
     title: "20% SUR LES SÉMINAIRES D'ENTREPRISE",
     description:
       "Que vous soyez dirigeant ou salarié, profitez de 20% de réduction sur votre séminaire dans nos maisons et faite vivre une expérience unique à votre entreprise !",
@@ -43,7 +45,7 @@ const InvestPerformanceSection = () => {
     >
       <div className="max-w-[1360px] xl:px-14 px-4 mx-auto">
         <h2
-          className="text-center text-black-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px]"
+          className="text-center text-black-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px] max-w-full w-[850px] mx-auto"
           ref={titleRef as RefObject<HTMLHeadingElement>}
         >
           AU-DELÀ DE LA PERFORMANCE FINANCIÈRE

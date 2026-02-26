@@ -12,7 +12,13 @@ interface UseGSAPAnimationOptions {
   markers?: boolean;
   scrub?: boolean | number;
   pin?: boolean;
-  snap?: boolean | number | number[];
+  snap?:
+    | number
+    | number[]
+    | "labels"
+    | "labelsDirectional"
+    | ScrollTrigger.SnapFunc
+    | ScrollTrigger.SnapVars;
   onEnter?: () => void;
   onLeave?: () => void;
   onEnterBack?: () => void;
@@ -25,6 +31,7 @@ export const useGSAPAnimation = (
 ) => {
   const elementRef = useRef<HTMLElement>(null);
   const animationRef = useRef<gsap.core.Timeline | gsap.core.Tween | null>(null);
+  const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
   useEffect(() => {
     if (!elementRef.current) return;
@@ -39,31 +46,34 @@ export const useGSAPAnimation = (
         start: options.start || "top 80%",
         end: options.end || "bottom 20%",
         toggleActions: options.toggleActions || "play none none reverse",
-        once: options.once || false,
-        markers: options.markers || false,
-        scrub: options.scrub || false,
-        pin: options.pin || false,
-        snap: options.snap || false,
+        once: options.once ?? false,
+        markers: options.markers ?? false,
+        scrub: options.scrub ?? false,
+        pin: options.pin ?? false,
+        snap: options.snap ?? undefined,
         onEnter: options.onEnter,
         onLeave: options.onLeave,
         onEnterBack: options.onEnterBack,
         onLeaveBack: options.onLeaveBack,
       };
 
-      // Add ScrollTrigger to the animation
-      if (animation instanceof gsap.core.Timeline) {
-        animation.scrollTrigger(scrollTriggerOptions);
-      } else {
-        animation.scrollTrigger(scrollTriggerOptions);
-      }
+      scrollTriggerRef.current = ScrollTrigger.create({
+        ...scrollTriggerOptions,
+        animation,
+      });
     }
 
     animationRef.current = animation;
 
     // Cleanup
     return () => {
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
+        scrollTriggerRef.current = null;
+      }
       if (animationRef.current) {
         animationRef.current.kill();
+        animationRef.current = null;
       }
     };
   }, [animationFn, options]);

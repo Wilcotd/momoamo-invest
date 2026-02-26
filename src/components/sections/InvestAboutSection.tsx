@@ -9,7 +9,7 @@ import {
   useScrollSlideUp,
   useScrollStaggerIn,
 } from "@/animations/scrollAnimations";
-import PortraitImage from "@/assets/images/house/house-1.jpg";
+import PortraitImage from "@/assets/images/invest-page/invest-about-1.webp";
 
 const aboutCards = [
   {
@@ -42,7 +42,7 @@ const InvestAboutSection = () => {
         <h2 className="text-offsite-secondary font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px]">
           ABOUT US
         </h2>
-        <p className="mt-4 text-offsite-secondary font-general font-light md:text-[24px] text-[20px] leading-[1.3] max-w-[720px]">
+        <p className="mt-4 text-offsite-secondary font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal text-start leading-[1.1] max-w-full w-[650px]">
           Investissez aux côtés d’entrepreneurs aguerris et experts de leur
           domaine
         </p>
@@ -69,7 +69,7 @@ const InvestAboutSection = () => {
               <h3 className="mt-5 text-offsite-secondary font-nichrome font-bold uppercase text-[28px] leading-tight">
                 {card.title}
               </h3>
-              <p className="mt-3 text-offsite-secondary/80 font-general font-light text-[16px] leading-[1.4]">
+              <p className="mt-3 text-offsite-secondary/80 font-general font-light text-[20px] leading-[1.4]">
                 {card.description}
               </p>
             </article>
