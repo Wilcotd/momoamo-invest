@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { InfiniteMovingLogo } from "@/components/ui/infinite-moving-logo";
 import { Input } from "@/components/ui/input";
+import { useInvestWaitlistModal } from "@/components/modals/InvestWaitlistModalProvider";
 
 import Airbnb_Svg from "@/assets/images/logos/airbnb.svg";
 import Alan_Svg from "@/assets/images/logos/alan.svg";
@@ -23,6 +24,8 @@ import Qonto_Svg from "@/assets/images/logos/qonto.svg";
 import Sncf_Svg from "@/assets/images/logos/sncf.svg";
 import Swile_Svg from "@/assets/images/logos/swile.svg";
 import Uber_Svg from "@/assets/images/logos/uber.svg";
+import InvestHeroImage from "@/assets/images/invest-page/invest-hero.webp";
+import InvestHeroItem2Image from "@/assets/images/invest-page/invest-hero-item-2.webp";
 
 const logos = [
   { img: Airbnb_Svg, width: 103, height: 32 },
@@ -125,6 +128,38 @@ const MomoamoLogo = ({ className }: { className?: string }) => {
 
 const InvestHero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [investmentValue, setInvestmentValue] = useState(20000);
+  const [isHeroVisualReady, setHeroVisualReady] = useState(false);
+  const { openModal } = useInvestWaitlistModal();
+  const heroVisualRef = useRef<HTMLDivElement>(null);
+  const formattedAmount = new Intl.NumberFormat("fr-FR").format(
+    investmentValue
+  );
+
+  useEffect(() => {
+    if (!heroVisualRef.current) return;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) {
+      setHeroVisualReady(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setHeroVisualReady(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(heroVisualRef.current);
+    return () => observer.disconnect();
+  }, []);
   return (
     <section aria-label="Hero Invest" className="w-full bg-offsite-main">
       <div className="max-w-[1360px] mx-auto w-full md:pt-8 pt-6">
@@ -199,7 +234,7 @@ const InvestHero = () => {
         </header>
 
         <div className="w-full xl:px-14 px-4 md:mt-[72px] mt-[40px]">
-          <div className="grid md:grid-cols-[1.05fr_0.95fr] gap-12 items-start">
+          <div className="grid md:grid-cols-[1.05fr_0.95fr] gap-[60px] md:gap-[180px] items-start">
             <div className="w-full">
               <h1 className="text-offsite-secondary font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px]">
                 Participez à la
@@ -270,44 +305,93 @@ const InvestHero = () => {
               </ul>
             </div>
 
-            <div className="w-full md:mt-2 mt-8">
-              <div className="relative w-full md:h-[520px] h-[340px]">
+            <div className="w-[80%] ml-auto md:ml-0 md:w-full md:mt-2 mt-8">
+              <div
+                className="relative w-full aspect-[534/671]"
+                ref={heroVisualRef}
+              >
                 <div
-                  className="absolute inset-0 bg-black-green"
-                  data-todo="TODO: remplacer par l'image hero principale"
-                  aria-hidden="true"
-                />
-                <div
-                  className="absolute left-[6%] top-[18%] md:w-[46%] w-[52%] bg-gray-green border border-offsite-secondary px-4 py-3"
-                  data-todo="TODO: remplacer par la carte TRI"
+                  className={`absolute inset-0 transition duration-500 ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:scale-100 motion-reduce:transform-none ${isHeroVisualReady ? "opacity-100 scale-100" : "opacity-0 scale-[1.02]"}`}
                 >
-                  <p className="text-offsite-main font-general text-[12px] uppercase">
-                    TRI cible annuel
-                  </p>
-                  <p className="text-offsite-main font-nichrome font-bold text-[28px] leading-none mt-1">
-                    12%
-                  </p>
+                  <Image
+                    src={InvestHeroImage}
+                    alt=""
+                    aria-hidden="true"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
                 <div
-                  className="absolute left-[18%] md:left-[32%] bottom-[8%] md:w-[48%] w-[64%] bg-gray-green border border-offsite-secondary px-4 py-4"
-                  data-todo="TODO: remplacer par la carte investissement"
+                  className={`w-[58.4%] absolute left-[-21.3%] bottom-[16.1%] transition duration-500 ease-out delay-150 motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transform-none ${isHeroVisualReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
                 >
-                  <p className="text-offsite-main font-general text-[12px] uppercase">
-                    Mortagne-au-Perche
-                  </p>
-                  <div className="flex items-center justify-between mt-2">
-                    <p className="text-offsite-main font-nichrome font-bold text-[24px] leading-none">
-                      20 000 €
-                    </p>
-                    <div className="w-[36px] h-[2px] bg-offsite-main" />
+                  <div className="relative w-full overflow-hidden">
+                    <Image
+                      src={InvestHeroItem2Image}
+                      alt=""
+                      aria-hidden="true"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/40" />
+                    <div className="aspect-[312/440] relative flex flex-col justify-between px-4 md:px-6 py-4 md:py-6">
+                      <div></div>
+                      <div className="text-center text-white">
+                        <p className="font-general text-[12px] uppercase tracking-wide">
+                          TRI cible annuel
+                        </p>
+                        <p className="mt-2 font-nichrome font-bold text-[32px] md:text-[44px] leading-none">
+                          12%
+                        </p>
+                      </div>
+                      <div className="mt-6 bg-white/90 text-dark-green px-4 py-3 md:px-5 md:py-4">
+                        <p className="font-nichrome font-bold uppercase text-[14px] md:text-[16px] leading-none">
+                          MORTAGNE-AU-PERCHE
+                        </p>
+                        <div className="mt-2 flex items-center gap-2">
+                          <span className="inline-flex items-center bg-lime-green px-3 py-1 text-[12px] font-nichrome font-bold uppercase text-dark-green">
+                            2,9 M€
+                          </span>
+                          <span className="text-[12px] md:text-[14px] font-general text-dark-green/80">
+                            678 m²
+                          </span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <button
-                    type="button"
-                    className="mt-3 uppercase text-offsite-main bg-offsite-secondary font-bold font-nichrome text-[14px] w-full h-[36px] flex items-center justify-center"
-                    aria-label="Investir"
-                  >
-                    Investir
-                  </button>
+                </div>
+                <div
+                  className={`absolute left-[19.3%] bottom-[4.4%] w-[68%] md:w-[46%] transition duration-500 ease-out delay-300 motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transform-none ${isHeroVisualReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+                >
+                  <div className="relative overflow-hidden bg-white/15 backdrop-blur-md">
+                    <div className="relative px-6 md:px-8 py-6 md:py-7">
+                      <p className="text-white font-nichrome font-bold text-[34px] md:text-[44px] leading-none text-center transition-all duration-200 ease-out">
+                        {formattedAmount} €
+                      </p>
+                      <div className="mt-4">
+                        <input
+                          type="range"
+                          min={5000}
+                          max={100000}
+                          step={500}
+                          value={investmentValue}
+                          onChange={(event) =>
+                            setInvestmentValue(Number(event.target.value))
+                          }
+                          className="w-full accent-lime-green"
+                          aria-label="Montant d'investissement"
+                        />
+                      </div>
+                      <button
+                        type="button"
+                        onClick={openModal}
+                        className="mt-4 w-full uppercase text-dark-green bg-lime-green font-nichrome font-bold text-[18px] md:text-[20px] h-[48px] md:h-[52px] flex items-center justify-center gap-2"
+                      >
+                        INVESTIR →
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
