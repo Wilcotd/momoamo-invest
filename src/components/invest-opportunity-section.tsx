@@ -9,10 +9,16 @@ import {
 } from "@/animations/scrollAnimations";
 import { useInvestWaitlistModal } from "@/components/modals/InvestWaitlistModalProvider";
 import Button_Arrow_Svg from "@/assets/images/svgs/arrow_forward.svg";
-import Bed_Svg from "@/assets/images/svgs/bed.svg";
+import Invest_1_Svg from "@/assets/images/invest-page/momo-invest-1.svg";
+import Invest_2_Svg from "@/assets/images/invest-page/momo-invest-2.svg";
+import Invest_3_Svg from "@/assets/images/invest-page/momo-invest-3.svg";
+import Invest_4_Svg from "@/assets/images/invest-page/momo-invest-4.svg";
+import Invest_5_Svg from "@/assets/images/invest-page/momo-invest-5.svg";
+import Invest_6_Svg from "@/assets/images/invest-page/momo-invest-6.svg";
 
 const opportunityItems = [
   {
+    image: Invest_1_Svg,
     label: "Rendement Cible*",
     headline: "TRI 12% / an, net de frais*",
     description: "Plus value foncière et forte rentabilité locative",
@@ -20,30 +26,35 @@ const opportunityItems = [
       "Les performances passées ne préjugent pas des performances futures",
   },
   {
+    image: Invest_2_Svg,
     label: "Horizon",
     headline: "3 À 5 ANS",
     description:
       "Le temps d’optimiser les conditions du refinancement bancaire",
   },
   {
+    image: Invest_3_Svg,
     label: "Distribution",
     headline: "Mensuelle ou In-fine*",
     description: "Directement issus des revenus de l’activité",
     footnote2: "*selon le choix de l’investisseur",
   },
   {
+    image: Invest_4_Svg,
     label: "Des garanties solides",
     headline: "UNE DOUBLE PROTECTION",
     description:
       "Vous êtes associés de la société projet, avec une garantie sur les titres Momoamo",
   },
   {
+    image: Invest_5_Svg,
     label: "Sortie claire dès le départ",
     headline: "C’EST NOUS QUI VOUS RACHETONS",
     description:
       "Refinancement bancaire avec rachat des investisseurs par Momoamo.",
   },
   {
+    image: Invest_6_Svg,
     label: "Des avantages en nature",
     headline: "REJOIGNEZ LE CLUB FERMÉ DES INVESTISSEURS",
     description: "Accès privilégié aux maisons et évènements exclusifs",
@@ -85,7 +96,7 @@ const InvestOpportunitySection = () => {
           {opportunityItems.map((item, index) => (
             <article key={item.label} className="flex flex-col">
               <Image
-                src={Bed_Svg}
+                src={item.image}
                 alt=""
                 aria-hidden="true"
                 width={40}

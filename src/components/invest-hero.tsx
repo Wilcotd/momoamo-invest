@@ -170,7 +170,7 @@ const InvestHero = () => {
                 href="https://www.instagram.com/momoamo_places/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="uppercase leading-none tracking-wider font-nichrome text-offsite-secondary text-[18px] font-bold no-underline cursor-pointer"
+                className="uppercase leading-none tracking-wider font-nichrome text-offsite-secondary text-[20px] font-bold no-underline cursor-pointer"
               >
                 INSTAGRAM
               </a>
@@ -178,26 +178,26 @@ const InvestHero = () => {
                 href="https://www.linkedin.com/company/momoamo/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="uppercase leading-none tracking-wider font-nichrome text-offsite-secondary text-[18px] font-bold no-underline cursor-pointer"
+                className="uppercase leading-none tracking-wider font-nichrome text-offsite-secondary text-[20px] font-bold no-underline cursor-pointer"
               >
                 LINKEDIN
               </a>
             </nav>
             <div className="text-center">
               <Link href="/" aria-label="Momoamo" className="inline-flex text-offsite-secondary">
-                <MomoamoLogo className="justify-center !w-[250px]" />
+                <MomoamoLogo className="justify-center !w-[322px]" />
               </Link>
             </div>
             <div className="flex justify-end items-center gap-3">
               <Link
                 href="/invest"
-                className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-secondary text-[18px] w-[159px] h-[44px] border-[1px] bg-transparent border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-secondary hover:!text-offsite-main justify-center items-center inline-flex"
+                className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-secondary text-[24px]  px-[25px] py-[10px] border-[1px] bg-transparent border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-secondary hover:!text-offsite-main justify-center items-center inline-flex"
               >
                 INVESTIR
               </Link>
               <button
                 type="button"
-                className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-main text-[18px] w-[176px] h-[44px] border-[1px] bg-offsite-secondary border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-main hover:!text-offsite-secondary"
+                className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-main text-[24px] px-[25px] py-[10px] border-[1px] bg-offsite-secondary border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-main hover:!text-offsite-secondary"
               >
                 RÉSERVER
               </button>

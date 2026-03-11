@@ -9,17 +9,18 @@ import {
   useScrollSlideUp,
   useScrollStaggerIn,
 } from "@/animations/scrollAnimations";
-import PortraitImage from "@/assets/images/invest-page/invest-about-1.webp";
+import AissaImage from "@/assets/images/invest-page/Team_Aissa.webp";
+import OlivierImage from "@/assets/images/invest-page/invest-about-1.webp";
 
 const aboutCards = [
   {
-    image: PortraitImage,
+    image: OlivierImage,
     title: "OLIVIER, KYMONO",
     description:
       "En quelques années Olivier, a créé un empire de la culture d’entreprise avec Kymono. L’entreprise totalise aujourd’hui plus de 10 000 clients et plus 300 séminaires organisés dont certains sur des concepts vus à la télé.",
   },
   {
-    image: PortraitImage,
+    image: AissaImage,
     title: "AISSA, ENKY",
     description:
       "En 2013, Aissa cofonde Edebex, une fintech qui totalise aujourd’hui plus d’1Md€+ de volume d’affaires. Il crée en 2019 Enky une entreprise à la frontière de la fintech et du FaaS (Mobilier par abonnement) qui a déjà séduit plus de 180 clients et 4700 investisseurs.",
