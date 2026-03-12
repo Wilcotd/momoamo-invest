@@ -39,6 +39,7 @@ const InvestWaitlistModal = ({ isOpen, onClose }: InvestWaitlistModalProps) => {
     setCapacity("");
     setCapacityError("");
     setIsSubmitting(false);
+    setSubmitSuccess(false);
   }, []);
 
   const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -52,6 +53,8 @@ const InvestWaitlistModal = ({ isOpen, onClose }: InvestWaitlistModalProps) => {
     setStep(2);
   };
 
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
   const handleSubmit = async () => {
     if (!capacity) {
       setCapacityError("Veuillez sélectionner une option.");
@@ -60,10 +63,18 @@ const InvestWaitlistModal = ({ isOpen, onClose }: InvestWaitlistModalProps) => {
     setCapacityError("");
     setIsSubmitting(true);
     try {
-      const payload = { email, capacity };
-      await new Promise((resolve) => setTimeout(resolve, 300));
-      console.log(payload);
-      closeModal();
+      const res = await fetch("/api/handle-invest-submission", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, capacity, source: "waitlist" }),
+      });
+      if (res.ok) {
+        setSubmitSuccess(true);
+      } else {
+        setCapacityError("Une erreur est survenue. Veuillez réessayer.");
+      }
+    } catch {
+      setCapacityError("Une erreur est survenue. Veuillez réessayer.");
     } finally {
       setIsSubmitting(false);
     }
@@ -171,7 +182,23 @@ const InvestWaitlistModal = ({ isOpen, onClose }: InvestWaitlistModalProps) => {
           </p>
         </div>
 
-        {step === 1 ? (
+        {submitSuccess ? (
+          <div className="mt-6 text-center">
+            <p className="font-nichrome font-bold uppercase text-[26px] md:text-[32px] leading-[1.1]">
+              Merci !
+            </p>
+            <p className="mt-4 font-general font-light text-[16px] md:text-[18px] leading-[1.4]">
+              Votre inscription a bien été enregistrée. Vous recevrez les informations du webinar par email.
+            </p>
+            <button
+              type="button"
+              onClick={closeModal}
+              className="mt-8 w-full inline-flex items-center justify-center gap-3 uppercase text-dark-green bg-lime-green font-bold font-nichrome text-[18px] md:text-[20px] h-[52px] md:h-[56px]"
+            >
+              FERMER
+            </button>
+          </div>
+        ) : step === 1 ? (
           <div className="mt-6">
             <label
               htmlFor="invest-waitlist-email"

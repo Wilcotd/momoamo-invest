@@ -130,6 +130,8 @@ const InvestHero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [investmentValue, setInvestmentValue] = useState(100000);
   const [isHeroVisualReady, setHeroVisualReady] = useState(false);
+  const [heroEmail, setHeroEmail] = useState("");
+  const [heroEmailStatus, setHeroEmailStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const { openModal } = useInvestWaitlistModal();
   const heroVisualRef = useRef<HTMLDivElement>(null);
   const formattedAmount = new Intl.NumberFormat("fr-FR").format(
@@ -158,7 +160,16 @@ const InvestHero = () => {
     );
 
     observer.observe(heroVisualRef.current);
-    return () => observer.disconnect();
+
+    // Fallback: ensure hero visual appears after 800ms even if observer doesn't fire
+    const fallbackTimer = setTimeout(() => {
+      setHeroVisualReady(true);
+    }, 800);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallbackTimer);
+    };
   }, []);
   return (
     <section aria-label="Hero Invest" className="w-full bg-offsite-main overflow-hidden">
@@ -170,7 +181,7 @@ const InvestHero = () => {
                 href="https://www.instagram.com/momoamo_places/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="uppercase leading-none tracking-wider font-nichrome text-offsite-secondary text-[20px] font-bold no-underline cursor-pointer"
+                className="uppercase leading-none tracking-wider font-nichrome text-offsite-secondary md:text-[16px] lg:text-[20px] font-bold no-underline cursor-pointer"
               >
                 INSTAGRAM
               </a>
@@ -178,7 +189,7 @@ const InvestHero = () => {
                 href="https://www.linkedin.com/company/momoamo/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="uppercase leading-none tracking-wider font-nichrome text-offsite-secondary text-[20px] font-bold no-underline cursor-pointer"
+                className="uppercase leading-none tracking-wider font-nichrome text-offsite-secondary md:text-[16px] lg:text-[20px] font-bold no-underline cursor-pointer"
               >
                 LINKEDIN
               </a>
@@ -191,13 +202,13 @@ const InvestHero = () => {
             <div className="flex justify-end items-center gap-3">
               <Link
                 href="/invest"
-                className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-secondary text-[24px]  px-[25px] py-[10px] border-[1px] bg-transparent border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-secondary hover:!text-offsite-main justify-center items-center inline-flex"
+                className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-secondary md:text-[18px] lg:text-[24px] md:px-[16px] lg:px-[25px] py-[10px] border-[1px] bg-transparent border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-secondary hover:!text-offsite-main justify-center items-center inline-flex"
               >
                 INVESTIR
               </Link>
               <button
                 type="button"
-                className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-main text-[24px] px-[25px] py-[10px] border-[1px] bg-offsite-secondary border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-main hover:!text-offsite-secondary"
+                className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-main md:text-[18px] lg:text-[24px] md:px-[16px] lg:px-[25px] py-[10px] border-[1px] bg-offsite-secondary border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-main hover:!text-offsite-secondary"
               >
                 RÉSERVER
               </button>
@@ -234,7 +245,7 @@ const InvestHero = () => {
         </header>
 
         <div className="w-full xl:px-14 px-4 md:mt-[72px] mt-[40px]">
-          <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-[46px] md:gap-[180px] items-start">
+          <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-[46px] md:gap-[40px] lg:gap-[100px] xl:gap-[180px] items-start">
             <div className="w-full">
               <h1 className="text-offsite-secondary font-nichrome font-bold uppercase leading-none md:text-[69px] text-[48px]">
                 Participez à la naissance d&apos;une collection de maisons d'exception
@@ -250,35 +261,79 @@ const InvestHero = () => {
                 >
                   Inscrivez vous à notre webinar de lancement :
                 </label>
-                <form className="mt-3 w-full" aria-label="Inscription webinar">
-                  <div className="flex w-full">
-                    <Input
-                      id="invest-email"
-                      type="email"
-                      placeholder="Votre email"
-                      className="h-[52px] rounded-none border-offsite-secondary text-offsite-secondary placeholder:text-[#A0FFE8] border-r-0 text-[16px] md:text-[20px] font-general font-normal"
-                      aria-label="Votre email"
-                    />
-                    <button
-                      type="submit"
-                      className="w-[52px] h-[52px] flex items-center justify-center bg-offsite-secondary text-offsite-main border border-offsite-secondary"
-                      aria-label="Envoyer"
-                    >
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z"
-                          fill="currentColor"
+                <form
+                  className="mt-3 w-full"
+                  aria-label="Inscription webinar"
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    if (!heroEmail || heroEmailStatus === "submitting") return;
+                    setHeroEmailStatus("submitting");
+                    try {
+                      const res = await fetch("/api/handle-invest-submission", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ email: heroEmail, source: "hero" }),
+                      });
+                      if (res.ok) {
+                        setHeroEmailStatus("success");
+                        setHeroEmail("");
+                      } else {
+                        setHeroEmailStatus("error");
+                      }
+                    } catch {
+                      setHeroEmailStatus("error");
+                    }
+                  }}
+                >
+                  {heroEmailStatus === "success" ? (
+                    <p className="text-lime-green font-general text-[16px] md:text-[18px] py-3">
+                      Merci ! Vous recevrez les informations du webinar par email.
+                    </p>
+                  ) : (
+                    <>
+                      <div className="flex w-full">
+                        <Input
+                          id="invest-email"
+                          type="email"
+                          required
+                          value={heroEmail}
+                          onChange={(e) => setHeroEmail(e.target.value)}
+                          placeholder="Votre email"
+                          className="h-[52px] rounded-none border-offsite-secondary text-offsite-secondary placeholder:text-[#A0FFE8] border-r-0 text-[16px] md:text-[20px] font-general font-normal"
+                          aria-label="Votre email"
                         />
-                      </svg>
-                    </button>
-                  </div>
+                        <button
+                          type="submit"
+                          disabled={heroEmailStatus === "submitting"}
+                          className="w-[52px] h-[52px] flex items-center justify-center bg-offsite-secondary text-offsite-main border border-offsite-secondary disabled:opacity-50"
+                          aria-label="Envoyer"
+                        >
+                          {heroEmailStatus === "submitting" ? (
+                            <span className="w-5 h-5 border-2 border-offsite-main border-t-transparent rounded-full animate-spin" />
+                          ) : (
+                            <svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          )}
+                        </button>
+                      </div>
+                      {heroEmailStatus === "error" && (
+                        <p className="text-red-400 font-general text-[14px] mt-2">
+                          Une erreur est survenue. Veuillez réessayer.
+                        </p>
+                      )}
+                    </>
+                  )}
                 </form>
               </div>
 

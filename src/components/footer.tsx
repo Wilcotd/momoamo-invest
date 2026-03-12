@@ -191,7 +191,7 @@ const PrivacyPolicyModal = ({
               contact@momoamo.co
             </a>
           </p>
-          <p className="mb-[16px]">&copy; Momoamo - All rights reserved 2025</p>
+          <p className="mb-[16px]">&copy; Momoamo - All rights reserved 2026</p>
         </>
       );
     } else {
@@ -220,7 +220,7 @@ const PrivacyPolicyModal = ({
           <p className="mb-[16px]">Numéro SIRET: 928 249 044</p>
           <p className="mb-[16px]">Dernière modification: 18/10/2025</p>
           <p className="mb-[16px]">Tous droits réservés.</p>
-          <p className="mb-[16px]">&copy; Momoamo - All rights reserved 2025</p>
+          <p className="mb-[16px]">&copy; Momoamo - All rights reserved 2026</p>
         </>
       );
     }
@@ -444,7 +444,7 @@ const FooterSection = ({
             </div>
             <div className="w-full">
               <p className="text-lime-green font-general font-light text-[16px] leading-[1.3]">
-                &copy; Momoamo - All rights reserved 2025
+                &copy; Momoamo - All rights reserved 2026
               </p>
             </div>
           </nav>

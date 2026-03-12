@@ -81,12 +81,11 @@ const InvestAboutSection = () => {
           ref={mobileRef as RefObject<HTMLDivElement>}
         >
           <Swiper
-            slidesPerView="auto"
+            slidesPerView={1}
             spaceBetween={16}
-            style={{ paddingRight: "0px", overflow: "visible" }}
           >
             {aboutCards.map((card) => (
-              <SwiperSlide key={card.title} className="!w-[80vw]">
+              <SwiperSlide key={card.title}>
                 <article className="flex flex-col">
                   <div className="w-full overflow-hidden bg-[#0f1c3d]">
                     <Image
