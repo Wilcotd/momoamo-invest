@@ -410,19 +410,19 @@ const InvestHero = () => {
                   </div>
                 </div>
                 <div
-                  className={`absolute left-[19.3%] bottom-[4.4%] w-[50%] md:w-[68%] md:w-[240px] transition duration-500 ease-out delay-300 motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transform-none ${isHeroVisualReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+                  className={`absolute left-[19.3%] bottom-[4.4%] w-[55%] md:w-[68%] md:w-[280px] transition duration-500 ease-out delay-300 motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transform-none ${isHeroVisualReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
                 >
                   <div className="relative overflow-hidden bg-[#2922224D] backdrop-blur-sm">
                     <div className="relative p-[16px] md:px-8 md:py-7">
-                      <p className="text-white font-nichrome font-bold text-[24px] md:text-[44px] leading-none text-center transition-all duration-200 ease-out">
+                      <p className={`text-white font-nichrome font-bold leading-none text-center transition-all duration-200 ease-out whitespace-nowrap ${investmentValue >= 1000000 ? "text-[18px] md:text-[32px]" : "text-[24px] md:text-[44px]"}`}>
                         {formattedAmount} €
                       </p>
                       <div className="mt-4">
                         <input
                           type="range"
                           min={10000}
-                          max={100000}
-                          step={500}
+                          max={1000000}
+                          step={5000}
                           value={investmentValue}
                           onChange={(event) =>
                             setInvestmentValue(Number(event.target.value))

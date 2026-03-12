@@ -16,12 +16,14 @@ const aboutCards = [
   {
     image: OlivierImage,
     title: "OLIVIER, KYMONO",
+    imageClass: "object-cover",
     description:
       "En quelques années Olivier, a créé un empire de la culture d’entreprise avec Kymono. L’entreprise totalise aujourd’hui plus de 10 000 clients et plus 300 séminaires organisés dont certains sur des concepts vus à la télé.",
   },
   {
     image: AissaImage,
     title: "AISSA, ENKY",
+    imageClass: "object-cover object-[center_20%] scale-[0.9]",
     description:
       "En 2013, Aissa cofonde Edebex, une fintech qui totalise aujourd’hui plus d’1Md€+ de volume d’affaires. Il crée en 2019 Enky une entreprise à la frontière de la fintech et du FaaS (Mobilier par abonnement) qui a déjà séduit plus de 180 clients et 4700 investisseurs.",
   },
@@ -63,7 +65,7 @@ const InvestAboutSection = () => {
                   aria-hidden="true"
                   width={684}
                   height={570}
-                  className="w-full aspect-[684/570] object-cover"
+                  className={`w-full aspect-[684/570] ${card.imageClass}`}
                   loading="lazy"
                 />
               </div>
@@ -94,7 +96,7 @@ const InvestAboutSection = () => {
                       aria-hidden="true"
                       width={684}
                       height={570}
-                      className="w-full aspect-[684/570] object-cover"
+                      className={`w-full aspect-[684/570] ${card.imageClass}`}
                       loading="lazy"
                     />
                   </div>

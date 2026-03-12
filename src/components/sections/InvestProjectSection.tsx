@@ -9,8 +9,8 @@ const projectDetails = [
   { label: "Lieu", value: "Normandie" },
   { label: "Projet global", value: "6,6m€" },
   { label: "Acquisition", value: "Mars 2024" },
-  { label: "Ouverture", value: "Mars 2025" },
-  { label: "Rendement locatif net", value: "1,3m€ / an" },
+  { label: "Ouverture", value: "2026" },
+  { label: "EBITDA", value: "1,3m€ / an" },
 ];
 
 const InvestProjectSection = () => {

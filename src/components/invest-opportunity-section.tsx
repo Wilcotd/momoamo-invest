@@ -21,11 +21,11 @@ import Invest_6_Svg from "@/assets/images/invest-page/momo-invest-6.svg";
 const opportunityItems = [
   {
     image: Invest_1_Svg,
-    label: "Rendement Cible*",
-    headline: "TRI 12% / an, net de frais*",
+    label: "Rendement Cible",
+    headline: "TRI 12% / an, net de frais",
     description: "Plus value foncière et forte rentabilité locative",
     footnote:
-      "Les performances passées ne préjugent pas des performances futures",
+      "*Les performances passées ne préjugent pas des performances futures",
   },
   {
     image: Invest_2_Svg,
