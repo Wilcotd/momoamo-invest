@@ -12,10 +12,14 @@ export type InvestFormData = {
 const testChannelId = "C09NA93UQMB"; // test-bot
 const prodChannelId = "C09NE7EAHTQ"; // website-requests
 
-const investSpreadsheetId = isProdEnv
-  ? "1Ylgu5bodsZ7Ge0EsZuiNa440JHYXVdcxiPx77YbXNyc"
-  : "1oiFtZ4nvSoinow4U-GU2N8DcgVdc1rqMC_fO8ggHYNs";
-const investRange = "Invest!A:Z";
+// Invest leads go to a SEPARATE spreadsheet from reservations.
+// Set INVEST_SPREADSHEET_ID env var on Vercel. Falls back to reservation sheet.
+const investSpreadsheetId =
+  process.env.INVEST_SPREADSHEET_ID ??
+  (isProdEnv
+    ? "1Ylgu5bodsZ7Ge0EsZuiNa440JHYXVdcxiPx77YbXNyc"
+    : "1oiFtZ4nvSoinow4U-GU2N8DcgVdc1rqMC_fO8ggHYNs");
+const investRange = "Sheet1!A:Z";
 
 export default async function handler(
   req: NextApiRequest,
