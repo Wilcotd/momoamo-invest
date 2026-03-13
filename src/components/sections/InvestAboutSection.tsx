@@ -23,7 +23,7 @@ const aboutCards = [
   {
     image: AissaImage,
     title: "AISSA, ENKY",
-    imageClass: "object-cover object-[center_20%] scale-[0.9]",
+    imageClass: "object-cover object-top",
     description:
       "En 2013, Aissa cofonde Edebex, une fintech qui totalise aujourd’hui plus d’1Md€+ de volume d’affaires. Il crée en 2019 Enky une entreprise à la frontière de la fintech et du FaaS (Mobilier par abonnement) qui a déjà séduit plus de 180 clients et 4700 investisseurs.",
   },
