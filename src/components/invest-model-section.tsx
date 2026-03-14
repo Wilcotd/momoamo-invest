@@ -175,7 +175,7 @@ const InvestModelSection = () => {
               style={{ paddingRight: "0px", overflow: "visible" }}
             >
               {modelItems.map((item) => (
-                <SwiperSlide key={item.title}>
+                <SwiperSlide key={item.title} className="!w-[80vw]">
                   <div className="bg-transparent pt-[24px]">
                     <div className="relative mt-[-24px] mb-[24px] h-px bg-lime-green/30 w-[calc(100%+16px)]">
                       <span className="absolute -top-[4px] left-0 h-[8px] w-[8px] rounded-full bg-lime-green" />
