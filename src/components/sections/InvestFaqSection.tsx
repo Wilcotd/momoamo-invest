@@ -11,32 +11,32 @@ const data = [
       {
         title: "Comment fonctionnent nos club deals ?",
         description:
-          "Chez Momoamo, on vous propose un modèle de club deal unique sur le marché, conçu pour maximiser votre rendement et minimiser vos risques:\n\n- La plupart des plateformes du marché sont des intermédiaires : chez Momoamo vous investissez aux côtés des fondateurs, dans des projets qu'ils portent eux-mêmes en capital, en responsabilité et en réputation.\n- Le marché vous demande de choisir entre opération de marchand de bien et investissement locatif : chez Momoamo vous profitez des deux : la création de valeur à l'actif (acquisition décotée + rénovation) et la sécurité des flux locatifs générés par l'exploitation (l’accueil de séminaires d’entreprise)\n- Le marché spécule, vous laissant seul porter l'incertitude de la sortie d’acheteur : chez momoamo la sortie est déjà sécurisée : c’est nous qui vous rachetons à 3-5 ans pour exploiter les biens nous-même.",
+          `<p>Chez Momoamo, on vous propose un modèle de club deal unique sur le marché, conçu pour maximiser votre rendement et minimiser vos risques :</p><ul><li>La plupart des plateformes du marché sont des intermédiaires : chez Momoamo vous investissez aux côtés des fondateurs, dans des projets qu'ils portent eux-mêmes en capital, en responsabilité et en réputation.</li><li>Le marché vous demande de choisir entre opération de marchand de bien et investissement locatif : chez Momoamo vous profitez des deux : la création de valeur à l'actif (acquisition décotée + rénovation) et la sécurité des flux locatifs générés par l'exploitation (l’accueil de séminaires d’entreprise).</li><li>Le marché spécule, vous laissant seul porter l'incertitude de la sortie d’acheteur : chez momoamo la sortie est déjà sécurisée : c’est nous qui vous rachetons à 3-5 ans pour exploiter les biens nous-même.</li></ul>`,
       },
       {
         title: "Qui peut investir ?",
         description:
-          "L'accès aux opportunités Momoamo est éligible à tous, que vous investissiez à titre personnel ou via une personne morale (holding IS, SCI, SAS, etc).\n\nLe ticket minimum est fixé à 10 000 € par opération.",
+          `<p>L'accès aux opportunités Momoamo est éligible à tous, que vous investissiez à titre personnel ou via une personne morale (holding IS, SCI, SAS, etc).</p><p>Le ticket minimum est fixé à 10 000 € par opération.</p>`,
       },
       {
         title: "Quel calendrier de distributions ?",
         description:
-          "Deux options selon votre situation :\n\n- Coupons mensuels : versement d’intérêts dès la mise en exploitation du bien, généralement entre 18 et 24 mois après l'acquisition.\n- Capitalisation in fine : accumulation du rendement sur toute la durée, versé en une seule fois à la sortie — particulièrement adapté aux investisseurs souhaitant optimiser leur fiscalité (notamment dans le cadre du dispositif 150-0 B ter).",
+          `<p>Deux options selon votre situation :</p><ul><li><strong>Coupons mensuels</strong> : versement d’intérêts dès la mise en exploitation du bien, généralement entre 18 et 24 mois après l'acquisition.</li><li><strong>Capitalisation in fine</strong> : accumulation du rendement sur toute la durée, versé en une seule fois à la sortie — particulièrement adapté aux investisseurs souhaitant optimiser leur fiscalité (notamment dans le cadre du dispositif 150-0 B ter).</li></ul>`,
       },
       {
         title: "Quelle liquidité ?",
         description:
-          "L'investissement en Club Deal immobilier est par nature illiquide sur la durée de l'opération.\nLa sortie intervient au moment du refinancement bancaire, estimé entre 3 et 5 ans après l'acquisition.\n\nNos projets se financeront en plusieurs tranches (acquisition, travaux, finitions) espacées d’environ 6 mois pour optimiser le coût du capital.\nLes souscripteurs des dernières tranches bénéficient mécaniquement d'un horizon de placement plus court.",
+          `<p>L'investissement en Club Deal immobilier est par nature illiquide sur la durée de l'opération. La sortie intervient au moment du refinancement bancaire, que nous estimons entre 3 et 5 ans après l'acquisition.</p><p>Nos projets se financeront en plusieurs tranches (l’acquisition, les travaux, les finitions..) espacés d’environ 6 mois pour optimiser le cout du capital. Les souscripteurs des dernières tranches bénéficient mécaniquement d'un horizon de placement plus court.</p>`,
       },
       {
         title: "Quels sont les frais ?",
         description:
-          "Les rendements affichés sont nets de frais.\nNotre marge est réalisée sur l'exploitation, pas sur la collecte.\n\nNous appliquons des frais de structuration à l'entrée, destinés à couvrir les coûts d'audit, de montage juridique et d'acte notarié.",
+          `<p>Les rendements affichés sont nets de frais.<br />Notre marge est réalisée sur l'exploitation, pas sur la collecte.</p><p>Nous appliquons des frais de structuration à l'entrée, destinés à couvrir les coûts d'audit, de montage juridique et d'acte notarié.</p>`,
       },
       {
         title: "Quel rendement viser et quelle durée d'investissement ?",
         description:
-          "Nos club deals visent un TRI net investisseur d’environ 12% sur un horizon généralement compris entre 3 et 5 ans.\n\nCette durée permet de mettre en œuvre la stratégie :\n- acquisition\n- travaux de repositionnement\n- montée en charge de l'exploitation\n- refinancement bancaire dans des conditions optimisées\n\nLes performances passées ne préjugent pas des résultats futurs. Investir comporte des risques de perte en capital et d'illiquidité. Les objectifs de rendement ne sont pas garantis.",
+          `<p>Nos clubs deal vise un Taux de Rendement Interne (TRI) net investisseur compris de 12%*, sur un horizon d'investissement généralement compris entre 3 et 5 ans. Cette durée permet de mettre en œuvre notre stratégie : acquisition, travaux de repositionnement, montée en charge de l'exploitation, puis refinancement bancaire dans des conditions optimisées.</p><p>* Les performances passées ne préjugent pas des résultats futurs. Investir comporte des risques de perte en capital et d'illiquidité. Les objectifs de rendement ne sont pas garantis.</p>`,
       },
     ],
   },
@@ -46,27 +46,27 @@ const data = [
       {
         title: "Pourquoi le marché du séminaire d’entreprise ?",
         description:
-          "À l'origine, c’est un problème concret : avec Kymono nous ne trouvions pas de lieux adaptés pour notre offre de séminaires d'entreprise. Nous avons décidé de la créer.\n\nCe point de départ a révélé une thèse d'investissement solide :\n- Industrie performante : l'hôtellerie figure parmi les classes d'actifs les plus défensives en immobilier.\n- Secteur résilient : la demande de séminaires hors-site est structurelle, peu sensible aux cycles économiques et en forte croissance.\n- Fort potentiel value-add : les domaines historiques se négocient à des valeurs résidentielles ; un repositionnement événementiel et des travaux maîtrisés suffisent à créer un écart de valorisation significatif.",
+          `<p>À l'origine, c’est un problème concret : avec Kymono nous ne trouvions pas de lieux adaptés pour notre offre de séminaires d'entreprise. Nous avons décidé de la créer.</p><p>Ce point de départ a révélé une thèse d'investissement solide :</p><ul><li><strong>Industrie performante :</strong> l'hôtellerie figure parmi les classes d'actifs les plus défensives en immobilier.</li><li><strong>Secteur résilient :</strong> la demande de séminaires hors-site est structurelle, peu sensible aux cycles économiques et en forte croissance.</li><li><strong>Fort potentiel value-add :</strong> les domaines historiques se négocient à des valeurs résidentielles ; un repositionnement événementiel et des travaux maîtrisés suffisent à créer un écart de valorisation significatif.</li></ul>`,
       },
       {
-        title: "Comment créez-vous de la valeur ?",
+        title: "Comment créez vous de la valeur ?",
         description:
-          "Notre modèle repose sur une maîtrise totale de la chaîne de valeur :\n- Ciblage de biens sous-valorisés ou mal entretenus avec marge de sécurité.\n- Travaux standardisés et maîtrisés grâce à un modèle répétable.\n- Réduction des capex via Enky : l’ameublement passe en charge mensuelle plutôt qu’en investissement initial.\n- Changement de destination vers l’événementiel haut de gamme.\n- Exploitation directe des biens par Momoamo.\n- Remplissage sécurisé : Kymono (10 000 clients) s’engage à utiliser en priorité les lieux Momoamo.\n\nLa concurrence atteint environ 80% de taux de remplissage, alors que l’équilibre est atteint chez nous dès 35%.",
+          `<p>Notre modèle repose sur une maîtrise totale de la chaîne de valeur :</p><ul><li>Ciblage de biens sous-valorisés ou mal entretenus avec marge de sécurité.</li><li>Travaux standardisés et maîtrisés grâce à un modèle répétable.</li><li>Réduction des capex via Enky : l’ameublement passe en charge mensuelle plutôt qu’en investissement initial.</li><li>Changement de destination vers l’événementiel haut de gamme.</li><li>Exploitation directe des biens par Momoamo.</li><li>Remplissage sécurisé : Kymono (10 000 clients) s’engage à utiliser en priorité les lieux Momoamo.</li></ul><p>*La concurrence a un taux de remplissage d’environ 80% (citer la source) et nous atteignons l’équilibre dès 35%.</p>`,
       },
       {
         title: "Comment sélectionnez-vous les opportunités ?",
         description:
-          "Notre sourcing cible une catégorie d'actifs volontairement étroite :\n- domaines historiques\n- à moins de 2h de Paris\n- avec décote significative à l’acquisition\n\nChaque opportunité fait l'objet d'une analyse économique approfondie :\n- rénovation\n- repositionnement\n- optimisation locative",
+          `<p>Notre sourcing cible une catégorie d'actifs délibérément étroite : des domaines historiques, à moins de 2h de Paris, présentant une décote significative à l'acquisition.</p><p>Chaque opportunité fait l'objet d'une analyse économique approfondie — rénovation, repositionnement, optimisation locative — avant d'être présentée aux investisseurs.</p>`,
       },
       {
         title: "Combien d'opérations sont proposées chaque année ?",
         description:
-          "Nous privilégions la qualité à la quantité.\n\nObjectif :\n- 2 à 3 club deals par an\n- chacun financé en 2 à 3 tranches\n\nCela représente 4 à 6 fenêtres d'investissement par an.",
+          `<p>Nous privilégions la qualité à la quantité. Nous visons une sélection rigoureuse d'opportunités à forte valeur ajoutée. Le nombre exact dépend des conditions de marché, mais notre objectif est de proposer 2 à 3 club deals par an, chacun financés sur 2 à 3 tranches.</p><p>Cela représente 4 à 6 fenêtres d’investissements par an sur notre plateforme.</p>`,
       },
       {
         title: "Quel est le parcours type d'un investissement ?",
         description:
-          "1. Découverte : annonce de l'opération par email\n2. Analyse : accès au deck, business plan et data room\n3. Collecte : ouverture en plusieurs tranches, signature électronique puis versement des fonds\n4. Visite des lieux : pendant la phase de travaux/aménagement\n5. Suivi : reporting trimestriel jusqu’au refinancement et distribution",
+          `<p>Le cycle d'investissement suit 5 étapes clés pour garantir transparence et efficacité :</p><ol><li><strong>Découverte :</strong> annonce de l'opération par email</li><li><strong>Analyse :</strong> accès au deck, business plan et data room</li><li><strong>Collecte :</strong> ouverture en plusieurs tranches, signature électronique puis versement des fonds</li><li><strong>Visite des lieux :</strong> pendant la phase de travaux/aménagement</li><li><strong>Suivi :</strong> reporting trimestriel jusqu’au refinancement et distribution</li></ol>`,
       },
     ],
   },
@@ -238,9 +238,12 @@ const InvestFaqSection = () => {
                                   role="region"
                                 >
                                   <div className="pt-4">
-                                    <p className="text-black-green text-[16px] leading-relaxed whitespace-pre-line">
-                                      {child.description}
-                                    </p>
+                                    <div
+                                      className="text-black-green text-[16px] leading-relaxed [&_p]:mt-3 [&_p:first-child]:mt-0 [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_ol]:mt-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-2 [&_li]:leading-relaxed [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-black-green/40 hover:[&_a]:decoration-black-green [&_em]:italic [&_strong]:font-semibold"
+                                      dangerouslySetInnerHTML={{
+                                        __html: child.description,
+                                      }}
+                                    />
                                   </div>
                                 </motion.div>
                               )}
