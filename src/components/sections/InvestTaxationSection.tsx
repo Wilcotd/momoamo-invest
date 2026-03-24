@@ -36,7 +36,7 @@ const InvestTaxationSection = () => {
             OPTIMISEZ VOTRE FISCALITÉ GRÂCE À MOMOAMO
           </h2>
           <p className="text-[#ff7a5a] font-normal font-nichrome md:text-[32px] text-[26px] tracking-normal text-start leading-[1.1] mt-[16px] md:mt-[24px]">
-            Nos club deal
+            Nos club deals
           </p>
         </div>
 

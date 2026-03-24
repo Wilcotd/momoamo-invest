@@ -99,7 +99,7 @@ const InvestModelSection = () => {
               Un modèle simple et inédit : ni pur marchand de biens, ni simple gestionnaire immobilier.
             </p>
             <p className="text-lime-green font-normal font-nichrome md:text-[32px] text-[24px] tracking-normal text-start leading-[1.1]  mt-[16px] md:mt-[24px]">
-              Investir dans nos club deal c&apos;est profiter d&apos;un modèle intégré qui crée de la valeur à chaque étape.
+              Investir dans nos club deals c&apos;est profiter d&apos;un modèle intégré qui crée de la valeur à chaque étape.
             </p>
             <button
               type="button"

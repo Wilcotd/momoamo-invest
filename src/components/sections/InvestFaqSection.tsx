@@ -12,7 +12,7 @@ const data = [
       {
         title: "Comment fonctionnent nos club deals ?",
         description:
-          `<p>Chez Momoamo, on vous propose un modèle de club deal unique sur le marché, conçu pour maximiser votre rendement et minimiser vos risques :</p><ul><li>La plupart des plateformes du marché sont des intermédiaires : chez Momoamo vous investissez aux côtés des fondateurs, dans des projets qu'ils portent eux-mêmes en capital, en responsabilité et en réputation.</li><li>Le marché vous demande de choisir entre opération de marchand de bien et investissement locatif : chez Momoamo vous profitez des deux : la création de valeur à l'actif (acquisition décotée + rénovation) et la sécurité des flux locatifs générés par l'exploitation (l’accueil de séminaires d’entreprise).</li><li>Le marché spécule, vous laissant seul porter l'incertitude de la sortie d’acheteur : chez momoamo la sortie est déjà sécurisée : c’est nous qui vous rachetons à 3-5 ans pour exploiter les biens nous-même.</li></ul>`,
+          `<p>Chez Momoamo, on vous propose un modèle de club deals unique sur le marché, conçu pour maximiser votre rendement et minimiser vos risques :</p><ul><li>La plupart des plateformes du marché sont des intermédiaires : chez Momoamo vous investissez aux côtés des fondateurs, dans des projets qu'ils portent eux-mêmes en capital, en responsabilité et en réputation.</li><li>Le marché vous demande de choisir entre opération de marchand de bien et investissement locatif : chez Momoamo vous profitez des deux : la création de valeur à l'actif (acquisition décotée + rénovation) et la sécurité des flux locatifs générés par l'exploitation (l’accueil de séminaires d’entreprise).</li><li>Le marché spécule, vous laissant seul porter l'incertitude de la sortie d’acheteur : chez momoamo la sortie est déjà sécurisée : c’est nous qui vous rachetons à 3-5 ans pour exploiter les biens nous-même.</li></ul>`,
       },
       {
         title: "Qui peut investir ?",
@@ -37,7 +37,7 @@ const data = [
       {
         title: "Quel rendement viser et quelle durée d'investissement ?",
         description:
-          `<p>Nos club deal vise un Taux de Rendement Interne (TRI) net investisseur compris de 12%*, sur un horizon d'investissement généralement compris entre 3 et 5 ans. Cette durée permet de mettre en œuvre notre stratégie : acquisition, travaux de repositionnement, montée en charge de l'exploitation, puis refinancement bancaire dans des conditions optimisées.</p><p>* Les performances passées ne préjugent pas des résultats futurs. Investir comporte des risques de perte en capital et d'illiquidité. Les objectifs de rendement ne sont pas garantis.</p>`,
+          `<p>Nos club deals vise un Taux de Rendement Interne (TRI) net investisseur compris de 12%*, sur un horizon d'investissement généralement compris entre 3 et 5 ans. Cette durée permet de mettre en œuvre notre stratégie : acquisition, travaux de repositionnement, montée en charge de l'exploitation, puis refinancement bancaire dans des conditions optimisées.</p><p>* Les performances passées ne préjugent pas des résultats futurs. Investir comporte des risques de perte en capital et d'illiquidité. Les objectifs de rendement ne sont pas garantis.</p>`,
       },
     ],
   },
