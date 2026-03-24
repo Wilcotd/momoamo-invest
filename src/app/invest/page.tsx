@@ -49,7 +49,7 @@ const InvestPage = () => {
           <InvestAdventureSection />
           <InvestTaxationSection />
           <InvestProjectSection />
-          <InvestLogosSection />
+          {/* <InvestLogosSection /> */}
           <InvestPerformanceSection />
           <InvestAboutSection />
 
@@ -60,7 +60,12 @@ const InvestPage = () => {
           <InvestCtaSection />
           
           <div className="bg-dark-green overflow-hidden">
-            <FooterSection setIsScroll={setIsScroll} setStop={setStop} showJoinCommunity={false} />
+            <FooterSection
+              setIsScroll={setIsScroll}
+              setStop={setStop}
+              showJoinCommunity={false}
+              contactEmail="Invest@momoamo.fr"
+            />
           </div>
         </div>
       </main>

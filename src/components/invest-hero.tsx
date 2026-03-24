@@ -251,7 +251,7 @@ const InvestHero = () => {
                 Participez à la naissance d&apos;une collection de maisons d'exception
               </h1>
               <p className="text-offsite-secondary font-nichrome text-[24px] md:text-[30px] leading-[1.3] mt-[16px] md:mt-[32px] max-w-[520px]">
-                Investissez dans nos clubs deal immobiliers uniques et contribuez à la création d&apos;espaces inspirants pour séjours professionnels.
+                Investissez dans nos club deal immobiliers uniques et contribuez à la création d&apos;espaces inspirants pour séjours professionnels.
               </p>
 
               <div className="mt-[32px] md:mt-[40px] w-full max-w-[440px]">

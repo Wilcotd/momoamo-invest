@@ -46,7 +46,7 @@ const opportunityItems = [
     label: "Des garanties solides",
     headline: "UNE DOUBLE PROTECTION",
     description:
-      "Vous êtes associés de la société projet, avec une garantie sur les titres Momoamo",
+      "Vous êtes associés de la société d'exploitation et propriétaires du bien financé",
   },
   {
     image: Invest_5_Svg,

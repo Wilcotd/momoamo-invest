@@ -277,10 +277,12 @@ const FooterSection = ({
   setIsScroll,
   setStop,
   showJoinCommunity = true,
+  contactEmail,
 }: {
   setIsScroll: React.Dispatch<React.SetStateAction<boolean>>;
   setStop: React.Dispatch<React.SetStateAction<boolean>>;
   showJoinCommunity?: boolean;
+  contactEmail?: string;
 }) => {
   const { topContentRef, imageRef, linksRef } = useFooterAnimations();
   const router = useRouter();
@@ -404,7 +406,7 @@ const FooterSection = ({
               href="https://www.linkedin.com/company/momoamo/"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative cursor-pointer w-fit group touch-manipulation z-[50]"
+              className="relative cursor-pointer w-fit group touch-manipulation z-[50] md:mb-[24px]"
               aria-label="LinkedIn (opens in a new tab)"
             >
               <span className="text-lime-green font-nichrome font-bold hover:opacity-50 md:text-[86px] relative z-[10] text-[58px] uppercase leading-18 transition-all duration-300 ease-in">
@@ -421,12 +423,19 @@ const FooterSection = ({
               <h3 className="text-lime-green font-nichrome font-bold text-[18px] uppercase leading-none">
                 MORE
               </h3>
+              {contactEmail ? (
+                <a
+                  href={`mailto:${contactEmail}`}
+                  rel="noopener noreferrer"
+                  className="text-lime-green block font-general font-light text-[16px] mt-[19px] cursor-pointer hover:opacity-50 transition-all duration-300 ease-in text-left"
+                >{contactEmail}</a>
+              ) : null}
               <button
                 onClick={() => {
                   setShowPrivacy(true);
                   setTitle("Privacy Policy");
                 }}
-                className="text-lime-green block font-general font-light text-[16px] mt-[19px] cursor-pointer hover:opacity-50 transition-all duration-300 ease-in text-left"
+                className="text-lime-green block font-general font-light text-[16px] cursor-pointer hover:opacity-50 transition-all duration-300 ease-in text-left mt-2"
                 type="button"
               >
                 Privacy Policy

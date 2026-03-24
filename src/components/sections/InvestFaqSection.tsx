@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useFAQAnimations } from "@/animations/scrollAnimations";
+import { ScrollTrigger } from "@/lib/gsap";
 
 const data = [
   {
@@ -36,7 +37,7 @@ const data = [
       {
         title: "Quel rendement viser et quelle durée d'investissement ?",
         description:
-          `<p>Nos clubs deal vise un Taux de Rendement Interne (TRI) net investisseur compris de 12%*, sur un horizon d'investissement généralement compris entre 3 et 5 ans. Cette durée permet de mettre en œuvre notre stratégie : acquisition, travaux de repositionnement, montée en charge de l'exploitation, puis refinancement bancaire dans des conditions optimisées.</p><p>* Les performances passées ne préjugent pas des résultats futurs. Investir comporte des risques de perte en capital et d'illiquidité. Les objectifs de rendement ne sont pas garantis.</p>`,
+          `<p>Nos club deal vise un Taux de Rendement Interne (TRI) net investisseur compris de 12%*, sur un horizon d'investissement généralement compris entre 3 et 5 ans. Cette durée permet de mettre en œuvre notre stratégie : acquisition, travaux de repositionnement, montée en charge de l'exploitation, puis refinancement bancaire dans des conditions optimisées.</p><p>* Les performances passées ne préjugent pas des résultats futurs. Investir comporte des risques de perte en capital et d'illiquidité. Les objectifs de rendement ne sont pas garantis.</p>`,
       },
     ],
   },
@@ -104,12 +105,29 @@ const InvestFaqSection = () => {
   >({ 0: 0 });
   const { titleRef } = useFAQAnimations();
   const [isShow, setIsShow] = useState(true);
+  const refreshTimeoutRef = useRef<number | null>(null);
+
+  const scheduleRefresh = () => {
+    if (typeof window === "undefined") return;
+    if (refreshTimeoutRef.current) {
+      window.clearTimeout(refreshTimeoutRef.current);
+    }
+    refreshTimeoutRef.current = window.setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 450);
+  };
 
   const toggleQuestion = (catIdx: number, qIdx: number) => {
     setOpenQuestions((prev) => ({
       ...prev,
       [catIdx]: prev[catIdx] === qIdx ? null : qIdx,
     }));
+    scheduleRefresh();
+  };
+
+  const toggleCategory = (catIdx: number) => {
+    setOpenCategory(openCategory === catIdx ? null : catIdx);
+    scheduleRefresh();
   };
 
   return (
@@ -125,6 +143,7 @@ const InvestFaqSection = () => {
             setIsShow(!isShow);
             setOpenCategory(null);
             setOpenQuestions({});
+            scheduleRefresh();
           }}
         >
           <h2 className="text-[#292222] font-nichrome font-bold md:text-[64px] text-[58px] uppercase leading-14">
@@ -164,9 +183,7 @@ const InvestFaqSection = () => {
                   className="py-8 border-t border-[#312C2C] last:border-b"
                 >
                   <button
-                    onClick={() =>
-                      setOpenCategory(openCategory === catIdx ? null : catIdx)
-                    }
+                    onClick={() => toggleCategory(catIdx)}
                     className="w-full flex justify-between items-center text-left"
                     aria-expanded={openCategory === catIdx ? "true" : "false"}
                     aria-controls={`category-content-${catIdx}`}
