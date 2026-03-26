@@ -92,6 +92,8 @@ type InvestWaitlistModalProps = {
   onClose: () => void;
   initialEmail?: string;
   initialStep?: 1 | 2;
+  initialFirstName?: string;
+  initialLastName?: string;
 };
 
 const InvestWaitlistModal = ({
@@ -99,6 +101,8 @@ const InvestWaitlistModal = ({
   onClose,
   initialEmail,
   initialStep,
+  initialFirstName,
+  initialLastName,
 }: InvestWaitlistModalProps) => {
   const [step, setStep] = useState<1 | 2>(1);
   const [firstName, setFirstName] = useState("");
@@ -208,8 +212,8 @@ const InvestWaitlistModal = ({
 
     const nextStep = initialStep ?? 1;
     setStep(nextStep);
-    setFirstName("");
-    setLastName("");
+    setFirstName(initialFirstName ?? "");
+    setLastName(initialLastName ?? "");
     setFirstNameError("");
     setEmail(initialEmail ?? "");
     setEmailError("");
@@ -233,7 +237,15 @@ const InvestWaitlistModal = ({
       document.body.style.overflow = "";
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen, handleKeyDown, resetState, initialEmail, initialStep]);
+  }, [
+    isOpen,
+    handleKeyDown,
+    resetState,
+    initialEmail,
+    initialStep,
+    initialFirstName,
+    initialLastName,
+  ]);
 
   if (!isOpen) return null;
 
