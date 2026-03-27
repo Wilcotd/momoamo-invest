@@ -13,7 +13,7 @@ import { useInvestWaitlistModal } from "@/components/modals/InvestWaitlistModalP
 import Button_Arrow_Svg from "@/assets/images/svgs/arrow_forward.svg";
 
 import AdventureImage from "@/assets/images/invest-page/invest-adventure-img-1.webp";
-import AdventureImage2 from "@/assets/images/invest-page/invest-adventure-img-2.webp";
+import AdventureImage2 from "@/assets/images/invest-page/invest-adventure-img-2-new.webp";
 import AdventureImage3 from "@/assets/images/invest-page/invest-adventure-img-3.webp";
 
 const adventureCards = [

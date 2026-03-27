@@ -2,8 +2,14 @@
 
 import Image from "next/image";
 import type { RefObject } from "react";
+import { useEffect, useState } from "react";
 import { useScrollSlideUp } from "@/animations/scrollAnimations";
-import HouseImage from "@/assets/images/invest-page/house-invest.webp";
+
+import OurFirstProjectImage1 from "@/assets/images/invest-page/OurFirstProject-1.webp";
+import OurFirstProjectImage2 from "@/assets/images/invest-page/OurFirstProject-2.webp";
+import OurFirstProjectImage3 from "@/assets/images/invest-page/OurFirstProject-3.webp";
+import OurFirstProjectImage4 from "@/assets/images/invest-page/OurFirstProject-4.webp";
+import OurFirstProjectImage5 from "@/assets/images/invest-page/OurFirstProject-5.webp";
 
 const projectDetails = [
   { label: "Lieu", value: "Normandie" },
@@ -17,6 +23,21 @@ const projectDetails = [
 const InvestProjectSection = () => {
   const titleRef = useScrollSlideUp();
   const imageRef = useScrollSlideUp(0.1);
+  const [activeImage, setActiveImage] = useState(0);
+  const projectImages = [
+    OurFirstProjectImage1,
+    OurFirstProjectImage2,
+    OurFirstProjectImage3,
+    OurFirstProjectImage4,
+    OurFirstProjectImage5,
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % projectImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [projectImages.length]);
   return (
     <section aria-label="Projet Momoamo" className="w-full bg-gray-green overflow-hidden">
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[100px] py-[40px]">
@@ -28,18 +49,21 @@ const InvestProjectSection = () => {
         </h2>
 
         <div
-          className="relative mt-[32px] md:mt-[40px]"
+          className="relative mt-[32px] md:mt-[40px] h-[580px] md:h-[680px]"
           ref={imageRef as RefObject<HTMLDivElement>}
         >
-          <Image
-            src={HouseImage}
-            alt=""
-            aria-hidden="true"
-            width={1360}
-            height={560}
-            className="w-full h-[580px] md:h-[680px] object-cover"
-            loading="lazy"
-          />
+          {projectImages.map((image, index) => (
+            <Image
+              key={image.src}
+              src={image}
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="(min-width: 768px) 1360px, 100vw"
+              className={`absolute inset-0 object-cover transition-opacity duration-700 ease-in-out motion-reduce:transition-none ${activeImage === index ? "opacity-100" : "opacity-0"}`}
+              loading="lazy"
+            />
+          ))}
 
           <div className="absolute left-1/2 -translate-x-1/2 bottom-[10px] w-[95%] md:w-[480px] max-w-full md:left-[50px] md:bottom-[50px] md:translate-x-0 md:top-auto backdrop-blur-[4px] bg-[#2922224D]">
             <div className="p-[24px] md:p-[32px]">
