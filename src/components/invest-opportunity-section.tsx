@@ -172,6 +172,10 @@ const InvestOpportunitySection = () => {
             ))}
           </Swiper>
         </div>
+
+        <p className="text-black-green font-normal font-nichrome md:text-[32px] text-[26px] tracking-normalleading-[1.1] mt-[64px] md:mt-[120px] text-center">
+          Investir comporte des risques, notamment de perte en capital. Le capital n'est pas garanti.
+        </p>
 {/* 
         <div
           className="mt-16 text-center"

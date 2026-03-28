@@ -64,7 +64,8 @@ const InvestPage = () => {
               setIsScroll={setIsScroll}
               setStop={setStop}
               showJoinCommunity={false}
-              contactEmail="Invest@momoamo.fr"
+              showFooterText={true}
+              contactEmail="invest@momoamo.fr"
             />
           </div>
         </div>

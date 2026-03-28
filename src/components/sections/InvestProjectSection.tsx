@@ -12,12 +12,12 @@ import OurFirstProjectImage4 from "@/assets/images/invest-page/OurFirstProject-4
 import OurFirstProjectImage5 from "@/assets/images/invest-page/OurFirstProject-5.webp";
 
 const projectDetails = [
-  { label: "Lieu", value: "Normandie" },
+  { label: "Lieu", value: "Sologne" },
   { label: "Projet global", value: "6,6m€" },
   { label: "Acquisition", value: "Mars 2024" },
   { label: "Ouverture", value: "2026" },
   // { label: "EBITDA", value: "1,3m€ / an" },
-  { label: "Notre rendement locatif nette", value: "20%" },
+  { label: "Notre rendement locatif net", value: "20%" },
 ];
 
 const InvestProjectSection = () => {
@@ -98,6 +98,10 @@ const InvestProjectSection = () => {
             </div>
           </div>
         </div>
+
+        <p className="text-black-green font-normal font-nichrome md:text-[32px] text-[26px] tracking-normalleading-[1.1] mt-[64px] md:mt-[120px] text-center max-w-[850px] mx-auto w-full">
+          Les performances passées ne préjugent pas des performances futures. Le rendement et le capital ne sont pas garantis
+        </p>
       </div>
     </section>
   );

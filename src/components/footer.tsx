@@ -277,11 +277,13 @@ const FooterSection = ({
   setIsScroll,
   setStop,
   showJoinCommunity = true,
+  showFooterText = false,
   contactEmail,
 }: {
   setIsScroll: React.Dispatch<React.SetStateAction<boolean>>;
   setStop: React.Dispatch<React.SetStateAction<boolean>>;
   showJoinCommunity?: boolean;
+  showFooterText?: boolean;
   contactEmail?: string;
 }) => {
   const { topContentRef, imageRef, linksRef } = useFooterAnimations();
@@ -458,6 +460,15 @@ const FooterSection = ({
             </div>
           </nav>
         </div>
+        
+        {showFooterText ? (
+          <div className="max-w-[1360px] px-4 xl:px-14 mx-auto w-full mt-[32px]">
+          <p className="text-lime-green font-general font-light text-[16px] leading-[1.3]">
+            La plateforme d’investissement de Momoamo s’inscrit dans le cadre réglementé de la directive Prospectus (UE2017/1129) qui définit les règles à suivre lors d’une offre au public de titres financiers. Momoamo dépose des Documents d’Information Synthétique (DIS) pour chaque offres auprès de l’Autorité des Marchés Financiers (AMF). Momoamo est affilié à un Prestataire de Services d’Investissement (PSI) agréé. L'investissement dans des entreprises non cotées présente des risques parmi lesquels : la perte partielle ou totale du capital investi, l'illiquidité, ainsi que des risques spécifiques inhérents à l'activité du projet. L'ensemble des risques relatifs à chaque projet est détaillé dans les notes d'information mises à disposition pour chaque projet. L'investissement doit être inscrit dans une démarche de constitution d'un portefeuille diversifié. Les documents relatifs à votre investissement via un SPV dédié, disponibles dans votre espace compte sécurisé, décrivent les risques potentiels. Veuillez lire attentivement ces avertissements de risques. Les investissements en immobilier via nos club-deals ont un horizon de sortie à moyen terme (4 à 5 ans) avec une liquidité limitée. Investir dans un club-deal immobilier n'est pas comparable à un dépôt bancaire. Investissez uniquement des montants dont vous n'avez pas besoin immédiatement et diversifiez vos placements. Les performances passées ne constituent pas un indicateur fiable des résultats futurs. Le présent site a un caractère promotionnel et est communiqué à titre purement indicatif. Les investisseurs sont invités à procéder à leur propre analyse et évaluation de l'ensemble des éléments relatifs à tout investissement. Momoamo ne propose pas de conseils en investissement. Rien ici ne doit être considéré comme une recommandation d'investir dans un titre quel qu'il soit.
+          </p>
+        </div>
+        ) : null}
+
         <button
           className="cursor-pointer md:mt-[56px] pb-[76px] md:pb-0 mt-8 relative z-[1] w-full border-0 !bg-transparent"
           onClick={() => router.push("#hero")}
